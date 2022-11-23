@@ -6,19 +6,18 @@ public abstract class Stat {
     private final String nom;
     private final Gender gender;
 
-    private int level;
+    private int level = 0;
     private int hp_max;
     private int hp;
     private int attack;
     private int defense;
     private int speed;
 
-    public Stat(Rarity rarity, String nom, Gender gender, int level, int hp_max, int attack, int defense, int speed) {
+    public Stat(Rarity rarity, String nom, Gender gender, int hp_max, int attack, int defense, int speed) {
         this.rarity = rarity;
         this.nom = nom;
         this.gender = gender;
 
-        this.level = level;
         this.hp_max = hp_max;
         this.hp = hp_max;
         this.attack = attack;
@@ -66,7 +65,7 @@ public abstract class Stat {
     public String toString() {
         return "Stat{" +
                 "rarity=" + rarity +
-                ", nom='" + nom + '\'' +
+                ", nom='" + nom + "'" +
                 '}';
     }
 
