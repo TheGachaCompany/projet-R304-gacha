@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Main",
+					"name": "fr.the_gacha_company.projet_r304_gacha.Main",
 					"defaultDiagram": true,
 					"ownedViews": [
 						{
