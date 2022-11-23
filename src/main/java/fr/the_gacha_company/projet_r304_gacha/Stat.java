@@ -1,9 +1,8 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-public abstract class Stat {
+public class Stat {
 
     private final Rarity rarity;
-    private final String nom;
     private final Gender gender;
 
     private int level = 0;
@@ -12,10 +11,10 @@ public abstract class Stat {
     private int attack;
     private int defense;
     private int speed;
+    private int xp = 0;
 
-    public Stat(Rarity rarity, String nom, Gender gender, int hp_max, int attack, int defense, int speed) {
+    public Stat(Rarity rarity, Gender gender, int hp_max, int attack, int defense, int speed) {
         this.rarity = rarity;
-        this.nom = nom;
         this.gender = gender;
 
         this.hp_max = hp_max;
@@ -27,10 +26,6 @@ public abstract class Stat {
 
     public Rarity getRarity() {
         return rarity;
-    }
-
-    public String getNom() {
-        return nom;
     }
 
     public Gender getGender() {
@@ -61,12 +56,22 @@ public abstract class Stat {
         return speed;
     }
 
+    public int getXp() {
+        return xp;
+    }
+
     @Override
     public String toString() {
         return "Stat{" +
                 "rarity=" + rarity +
-                ", nom='" + nom + "'" +
+                ", gender=" + gender +
+                ", level=" + level +
+                ", hp_max=" + hp_max +
+                ", hp=" + hp +
+                ", attack=" + attack +
+                ", defense=" + defense +
+                ", speed=" + speed +
+                ", xp=" + xp +
                 '}';
     }
-
 }

@@ -1,28 +1,36 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-public abstract class Hero extends Stat {
+public abstract class Hero {
 
+    private final String name;
     private final String lore;
+    private final Stat stat;
 
-    private int xp = 0;
 
-    public Hero(Rarity rarity, String nom, Gender gender, int hp_max, int attack, int defense, int speed, String lore) {
-        super(rarity, nom, gender, hp_max, attack, defense, speed);
+    public Hero(String name, String lore, Rarity rarity, Gender gender, int hp_max, int attack, int defense, int speed) {
+        this.name = name;
         this.lore = lore;
+        this.stat = new Stat(rarity, gender, hp_max, attack, defense, speed);
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getLore() {
         return lore;
     }
 
-    public int getXp() {
-        return xp;
+    public Stat getState() {
+        return stat;
     }
 
     @Override
     public String toString() {
-        return "Hero{" + super.toString() +
-                ", xp=" + xp +
+        return "Hero{" +
+                "name=" + name +
+                ", lore=" + lore +
+                ", " + super.toString() +
                 "}";
     }
 
