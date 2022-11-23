@@ -3,9 +3,10 @@ package fr.the_gacha_company.projet_r304_gacha;
 public enum Rarity {
 
     COMMON(1),
-    RARE(2),
-    EPIC(3),
-    LEGENDARY(4);
+    UNCOMMON(2),
+    RARE(3),
+    EPIC(4),
+    LEGENDARY(5);
 
     public final int stars;
 
