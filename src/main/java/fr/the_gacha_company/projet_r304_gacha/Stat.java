@@ -2,21 +2,17 @@ package fr.the_gacha_company.projet_r304_gacha;
 
 public class Stat {
 
-    private final Rarity rarity;
-    private final Gender gender;
-
-    private int level = 0;
+    private int level;
+    private int xp;
     private int hp_max;
     private int hp;
-    private int attack;
-    private int defense;
-    private int speed;
-    private int xp = 0;
+    private double attack;
+    private double defense;
+    private double speed;
 
-    public Stat(Rarity rarity, Gender gender, int hp_max, int attack, int defense, int speed) {
-        this.rarity = rarity;
-        this.gender = gender;
-
+    public Stat(int hp_max, double attack, double defense, double speed) {
+        this.level = 0;
+        this.xp = 0;
         this.hp_max = hp_max;
         this.hp = hp_max;
         this.attack = attack;
@@ -24,16 +20,12 @@ public class Stat {
         this.speed = speed;
     }
 
-    public Rarity getRarity() {
-        return rarity;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
     public int getLevel() {
         return level;
+    }
+
+    public int getXp() {
+        return xp;
     }
 
     public int getHp_max() {
@@ -44,28 +36,22 @@ public class Stat {
         return hp;
     }
 
-    public int getAttack() {
+    public double getAttack() {
         return attack;
     }
 
-    public int getDefense() {
+    public double getDefense() {
         return defense;
     }
 
-    public int getSpeed() {
+    public double getSpeed() {
         return speed;
-    }
-
-    public int getXp() {
-        return xp;
     }
 
     @Override
     public String toString() {
         return "Stat{" +
-                "rarity=" + rarity +
-                ", gender=" + gender +
-                ", level=" + level +
+                "level=" + level +
                 ", hp_max=" + hp_max +
                 ", hp=" + hp +
                 ", attack=" + attack +
