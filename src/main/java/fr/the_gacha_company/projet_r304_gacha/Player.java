@@ -16,6 +16,7 @@ public final class Player {
     public int play(int choice) {
         switch (choice) {
             case 1:
+                heroes.add(Hero.get_random_hero());
                 break;
             case 2:
                 break;
