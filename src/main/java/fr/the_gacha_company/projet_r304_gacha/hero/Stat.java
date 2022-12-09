@@ -1,4 +1,4 @@
-package fr.the_gacha_company.projet_r304_gacha;
+package fr.the_gacha_company.projet_r304_gacha.hero;
 
 public class Stat {
 
@@ -48,6 +48,11 @@ public class Stat {
         return speed;
     }
 
+    public void increment_level() {
+        ++level;
+        xp = 0;
+    }
+
     @Override
     public String toString() {
         return "Stat{" +
@@ -60,4 +65,5 @@ public class Stat {
                 ", xp=" + xp +
                 '}';
     }
+
 }

@@ -1,6 +1,7 @@
-package fr.the_gacha_company.projet_r304_gacha;
+package fr.the_gacha_company.projet_r304_gacha.hero;
 
-import fr.the_gacha_company.projet_r304_gacha.heroes.Godric;
+import fr.the_gacha_company.projet_r304_gacha.Main;
+import fr.the_gacha_company.projet_r304_gacha.hero.heroes.Godric;
 
 import java.util.HashSet;
 import java.util.Set;
