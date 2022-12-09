@@ -1,9 +1,8 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-import java.util.HashSet;
-import java.util.Set;
+import fr.the_gacha_company.projet_r304_gacha.hero.Hero;
 
-public final class Player {
+public class Player {
 
     public static final String instructions = """
             1. Acheter un héros
@@ -11,12 +10,12 @@ public final class Player {
             3. Combattre
             4. Quitter le jeu""";
 
-    private final Set<Hero> heroes = new HashSet<>();
+    private final HeroesDeck deck = new HeroesDeck();
 
     public int play(int choice) {
         switch (choice) {
             case 1:
-                heroes.add(Hero.get_random_hero());
+                deck.add(Hero.get_random_hero());
                 break;
             case 2:
                 break;
