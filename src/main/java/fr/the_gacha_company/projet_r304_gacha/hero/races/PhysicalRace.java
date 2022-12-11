@@ -7,20 +7,8 @@ import java.util.Map;
 
 public class PhysicalRace extends Race {
 
-    public enum PhysicalRaceName {
-        HUMAN, ORC
-    }
-
-    private static final Map<PhysicalRaceName, PhysicalRace> races = new HashMap<>(){{
-        put(PhysicalRaceName.HUMAN, new PhysicalRace(PhysicalRaceName.HUMAN.toString(),
-                new Stat(0, 0, 0, 0)));
-        put(PhysicalRaceName.ORC, new PhysicalRace(PhysicalRaceName.ORC.toString(),
-                new Stat(20, 0.2, 0.2, -0.2)));
-    }};
-
-    public static PhysicalRace get(PhysicalRaceName name) {
-        return races.get(name);
-    }
+    public static final PhysicalRace HUMAN = new PhysicalRace("Humain", new Stat(0, 0, 0, 0));
+    public static final PhysicalRace ORC = new PhysicalRace("Orc", new Stat(20, 0.2, 0.2, -0.2));
 
     private PhysicalRace(String name, Stat boost) {
         super(name, boost);

@@ -7,18 +7,7 @@ import java.util.HashMap;
 
 public class MagicalRace extends Race {
 
-    public enum MagicalRaceName {
-        ELF
-    }
-
-    private static final Map<MagicalRaceName, MagicalRace> races = new HashMap<>(){{
-        put(MagicalRaceName.ELF, new MagicalRace(MagicalRaceName.ELF.toString(),
-                new Stat(-10, 0, 0, 0.2)));
-    }};
-
-    public static MagicalRace get(MagicalRaceName name) {
-        return races.get(name);
-    }
+    public static final MagicalRace ELF = new MagicalRace("Elfe", new Stat(-10, 0, 0, 0.2));
 
     private MagicalRace(String name, Stat boost) {
         super(name, boost);

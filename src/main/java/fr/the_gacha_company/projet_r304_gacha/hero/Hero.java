@@ -1,8 +1,10 @@
 package fr.the_gacha_company.projet_r304_gacha.hero;
 
 import fr.the_gacha_company.projet_r304_gacha.Main;
+import fr.the_gacha_company.projet_r304_gacha.hero.races.MagicalRace;
 import fr.the_gacha_company.projet_r304_gacha.hero.races.PhysicalRace;
 import fr.the_gacha_company.projet_r304_gacha.hero.races.Race;
+import fr.the_gacha_company.projet_r304_gacha.hero.roles.MagicalRole;
 import fr.the_gacha_company.projet_r304_gacha.hero.roles.PhysicalRole;
 import fr.the_gacha_company.projet_r304_gacha.hero.roles.Role;
 
@@ -12,9 +14,18 @@ import java.util.Set;
 public abstract class Hero {
 
     public static Set<Hero> heroes = new HashSet<>(){{
-        add(new PhysicalHero("Godric", PhysicalRace.get(PhysicalRace.PhysicalRaceName.HUMAN),
-                PhysicalRole.get(PhysicalRole.PhysicalRoleName.SWORDSMAN), Gender.MALE, Rarity.COMMON,
-                "le lore", new Stat(120, 10, 10, 10)));
+        // COMMON
+        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.SWORDSMAN, Gender.MALE, Rarity.COMMON,
+                "le lore", new Stat(45, 4, 0.25, 15)));
+        add(new PhysicalHero("Borld", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
+                "le lore v2 xD", new Stat(35, 6, 0.2, 20)));
+
+        add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
+                "todo", new Stat(15, 7, 0.24, 15)));
+
+        // UNCOMMON
+        add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.COMMON,
+                "todo", new Stat(20, 12, 0.25, 40)));
     }};
     public static final double total;
 
