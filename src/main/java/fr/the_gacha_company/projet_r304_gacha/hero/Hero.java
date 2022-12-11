@@ -1,14 +1,17 @@
 package fr.the_gacha_company.projet_r304_gacha.hero;
 
 import fr.the_gacha_company.projet_r304_gacha.Main;
+import fr.the_gacha_company.projet_r304_gacha.hero.races.PhysicalRace;
+import fr.the_gacha_company.projet_r304_gacha.hero.races.Race;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Hero {
+public abstract class Hero {
 
     public static Set<Hero> heroes = new HashSet<>(){{
-        add(new Hero("Godric", Race.HUMAN, Gender.MALE, Rarity.COMMON, "le lore", new Stat(120, 10, 10, 10)));
+        add(new PhysicalHero("Godric", PhysicalRace.get(PhysicalRace.PhysicalRaceName.HUMAN), Gender.MALE,
+                Rarity.COMMON, "le lore", new Stat(120, 10, 10, 10)));
     }};
     public static final double total;
 
@@ -31,6 +34,7 @@ public class Hero {
 
     private final String name;
     private final Race race;
+//    private final Role role;
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
@@ -41,6 +45,7 @@ public class Hero {
     public Hero(String name, Race race, Gender gender, Rarity rarity, String lore, Stat stat) {
         this.name = name;
         this.race = race;
+//        this.role = role;
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
@@ -56,6 +61,10 @@ public class Hero {
         return race;
     }
 
+//    public Role getRole() {
+//        return role;
+//    }
+
     public Gender getGender() {
         return gender;
     }
@@ -70,10 +79,6 @@ public class Hero {
 
     public Stat getStat() {
         return stat;
-    }
-
-    public double getDrop() {
-        return drop;
     }
 
     @Override
