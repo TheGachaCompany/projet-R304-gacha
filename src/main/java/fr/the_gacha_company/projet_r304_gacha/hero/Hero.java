@@ -3,6 +3,8 @@ package fr.the_gacha_company.projet_r304_gacha.hero;
 import fr.the_gacha_company.projet_r304_gacha.Main;
 import fr.the_gacha_company.projet_r304_gacha.hero.races.PhysicalRace;
 import fr.the_gacha_company.projet_r304_gacha.hero.races.Race;
+import fr.the_gacha_company.projet_r304_gacha.hero.roles.PhysicalRole;
+import fr.the_gacha_company.projet_r304_gacha.hero.roles.Role;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,8 +12,9 @@ import java.util.Set;
 public abstract class Hero {
 
     public static Set<Hero> heroes = new HashSet<>(){{
-        add(new PhysicalHero("Godric", PhysicalRace.get(PhysicalRace.PhysicalRaceName.HUMAN), Gender.MALE,
-                Rarity.COMMON, "le lore", new Stat(120, 10, 10, 10)));
+        add(new PhysicalHero("Godric", PhysicalRace.get(PhysicalRace.PhysicalRaceName.HUMAN),
+                PhysicalRole.get(PhysicalRole.PhysicalRoleName.SWORDSMAN), Gender.MALE, Rarity.COMMON,
+                "le lore", new Stat(120, 10, 10, 10)));
     }};
     public static final double total;
 
@@ -34,7 +37,7 @@ public abstract class Hero {
 
     private final String name;
     private final Race race;
-//    private final Role role;
+    private final Role role;
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
@@ -42,10 +45,10 @@ public abstract class Hero {
     private final double drop;
 
 
-    public Hero(String name, Race race, Gender gender, Rarity rarity, String lore, Stat stat) {
+    public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         this.name = name;
         this.race = race;
-//        this.role = role;
+        this.role = role;
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
@@ -61,9 +64,9 @@ public abstract class Hero {
         return race;
     }
 
-//    public Role getRole() {
-//        return role;
-//    }
+    public Role getRole() {
+        return role;
+    }
 
     public Gender getGender() {
         return gender;
