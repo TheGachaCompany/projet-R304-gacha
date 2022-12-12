@@ -2,8 +2,6 @@ package fr.the_gacha_company.projet_r304_gacha;
 
 public class Stat {
 
-    private int level;
-    private int xp;
     private int hpMax;
     private double hp;
     private int attack;
@@ -11,21 +9,11 @@ public class Stat {
     private int speed;
 
     public Stat(int hpMax, int attack, float defense, int speed) {
-        this.level = 0;
-        this.xp = 0;
         this.hpMax = hpMax;
-        this.hp = hpMax;
         this.attack = attack;
         this.defense = defense;
         this.speed = speed;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public int getXp() {
-        return xp;
+        regen();
     }
 
     public int getHp_max() {
@@ -55,11 +43,6 @@ public class Stat {
     public int getSpeed() {
         return speed;
     }
-
-    public void increment_level() {
-        ++level;
-        xp = 0;
-    }
     
     public boolean isDead() {
         return hp <= 0;
@@ -68,13 +51,11 @@ public class Stat {
     @Override
     public String toString() {
         return "Stat{" +
-                "level=" + level +
-                ", hpMax=" + hpMax +
+                "hpMax=" + hpMax +
                 ", hp=" + hp +
                 ", attack=" + attack +
                 ", defense=" + defense +
                 ", speed=" + speed +
-                ", xp=" + xp +
                 '}';
     }
 

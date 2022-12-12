@@ -56,6 +56,9 @@ public abstract class Hero extends Character {
     private final String lore;
     private final double drop;
 
+    private int level = 1;
+    private int xp = 0;
+
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(stat);
@@ -92,16 +95,28 @@ public abstract class Hero extends Character {
         return lore;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void levelUp() {
+        ++level;
+        xp = 0;
+    }
+
 
     @Override
     public String toString() {
-//        return "Hero{" +
-//                "name='" + name + '\'' +
-//                ", rarity=" + rarity +
-//                ", gender=" + gender +
-//                ", lore='" + lore + '\'' +
-//                '}';
-        return name;
+        return "Hero{" +
+                "name='" + name + '\'' +
+                ", rarity=" + rarity +
+                ", gender=" + gender +
+                ", lore='" + lore + '\'' +
+                '}';
     }
 
 }

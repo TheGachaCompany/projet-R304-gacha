@@ -10,7 +10,7 @@ public class HeroesDeck extends ArrayList<Hero> {
     public boolean add(Hero hero) {
         if (contains(hero))
             // if hero is already unlocked
-            hero.getStat().increment_level();
+            hero.levelUp();
         else
             super.add(hero);
         return true;
