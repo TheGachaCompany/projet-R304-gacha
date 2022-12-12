@@ -1,6 +1,6 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-import fr.the_gacha_company.projet_r304_gacha.hero.Hero;
+import fr.the_gacha_company.projet_r304_gacha.heroes.Hero;
 
 public class Player {
 
@@ -10,7 +10,20 @@ public class Player {
             3. Combattre
             4. Quitter le jeu""";
 
+    private static int fight(Hero hero, Monster monster) {
+        if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
+            monster.attack(hero);
+        while (true) {
+            if (hero.getStat().isDead()) return 0;
+            hero.attack(monster);
+            if (monster.getStat().isDead()) return monster.getGoldValue();
+            monster.attack(hero);
+        }
+    }
+
     private final HeroesDeck deck = new HeroesDeck();
+
+    private int gold = 0;
 
     public int play(int choice) {
         switch (choice) {
@@ -18,8 +31,14 @@ public class Player {
                 deck.add(Hero.get_random_hero());
                 break;
             case 2:
+                System.out.println(deck);
                 break;
             case 3:
+                Hero h = deck.get(Main.get_input("Choisissez un héros (numéro): "));
+                int g = fight(h, Monster.createMonster());
+                gold += g;
+                System.out.println("Won " + g + " gold (" + gold + ")");
+                h.getStat().regen();
                 break;
             case 4:
                 return -1;

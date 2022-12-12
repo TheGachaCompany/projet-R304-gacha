@@ -1,6 +1,6 @@
-package fr.the_gacha_company.projet_r304_gacha.hero.races;
+package fr.the_gacha_company.projet_r304_gacha.heroes.races;
 
-import fr.the_gacha_company.projet_r304_gacha.hero.Stat;
+import fr.the_gacha_company.projet_r304_gacha.Stat;
 
 public abstract class Race {
 

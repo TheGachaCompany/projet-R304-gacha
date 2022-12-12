@@ -1,7 +1,4 @@
-package fr.the_gacha_company.projet_r304_gacha.hero.roles;
-
-import java.util.HashMap;
-import java.util.Map;
+package fr.the_gacha_company.projet_r304_gacha.heroes.roles;
 
 public class PhysicalRole extends Role {
 

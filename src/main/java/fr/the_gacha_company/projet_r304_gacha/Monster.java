@@ -1,21 +1,21 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-import fr.the_gacha_company.projet_r304_gacha.hero.Stat;
-
-public class Monster {
+public class Monster extends Character {
 
     public static Monster createMonster() {
-        return new Monster(new Stat(Main.rand.nextInt(15, 50), Main.rand.nextDouble(4, 15),
-                Main.rand.nextDouble(0.1, 0.4), Main.rand.nextDouble(15, 40)));
+        return new Monster(new Stat(Main.rand.nextInt(15, 50), Main.rand.nextInt(4, 15),
+                Main.rand.nextFloat(0.1f, 0.4f), Main.rand.nextInt(15, 40)));
     }
 
-    private final Stat stat;
+    private final int goldValue;
 
     private Monster(Stat stat) {
-        this.stat = stat;
+        super(stat);
+        goldValue = Math.round((stat.getHp_max() + stat.getAttack() + stat.getSpeed()) * (1+stat.getDefense()));
     }
 
-    public Stat getStat() {
-        return stat;
+    public int getGoldValue() {
+        return goldValue;
     }
+
 }

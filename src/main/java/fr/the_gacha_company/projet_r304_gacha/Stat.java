@@ -1,20 +1,20 @@
-package fr.the_gacha_company.projet_r304_gacha.hero;
+package fr.the_gacha_company.projet_r304_gacha;
 
 public class Stat {
 
     private int level;
     private int xp;
-    private int hp_max;
-    private int hp;
-    private double attack;
-    private double defense;
-    private double speed;
+    private int hpMax;
+    private double hp;
+    private int attack;
+    private float defense;
+    private int speed;
 
-    public Stat(int hp_max, double attack, double defense, double speed) {
+    public Stat(int hpMax, int attack, float defense, int speed) {
         this.level = 0;
         this.xp = 0;
-        this.hp_max = hp_max;
-        this.hp = hp_max;
+        this.hpMax = hpMax;
+        this.hp = hpMax;
         this.attack = attack;
         this.defense = defense;
         this.speed = speed;
@@ -29,22 +29,30 @@ public class Stat {
     }
 
     public int getHp_max() {
-        return hp_max;
+        return hpMax;
     }
 
-    public int getHp() {
+    public double getHp() {
         return hp;
     }
 
-    public double getAttack() {
+    public void takeDamage(double damage) {
+        hp -= damage;
+    }
+    
+    public void regen() {
+        hp = hpMax;
+    }
+
+    public int getAttack() {
         return attack;
     }
 
-    public double getDefense() {
+    public float getDefense() {
         return defense;
     }
 
-    public double getSpeed() {
+    public int getSpeed() {
         return speed;
     }
 
@@ -52,12 +60,16 @@ public class Stat {
         ++level;
         xp = 0;
     }
+    
+    public boolean isDead() {
+        return hp <= 0;
+    }
 
     @Override
     public String toString() {
         return "Stat{" +
                 "level=" + level +
-                ", hp_max=" + hp_max +
+                ", hpMax=" + hpMax +
                 ", hp=" + hp +
                 ", attack=" + attack +
                 ", defense=" + defense +
