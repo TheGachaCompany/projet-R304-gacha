@@ -24,6 +24,10 @@ public class Stat {
         return hp;
     }
 
+    public int getRoundedHp() {
+        return (int) Math.round(hp);
+    }
+
     public void takeDamage(double damage) {
         hp -= damage;
     }

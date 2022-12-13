@@ -34,6 +34,8 @@ public class Player {
                 System.out.println(deck.show());
                 break;
             case 3:
+                Monster m = Monster.createMonster();
+                System.out.println(m.show());
                 System.out.println(deck.show());
                 Hero h = deck.get(Main.get_input("Choisissez un héros (numéro): "));
                 int g = fight(h, Monster.createMonster());

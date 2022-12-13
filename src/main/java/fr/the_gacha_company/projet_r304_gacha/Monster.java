@@ -25,6 +25,16 @@ public class Monster extends Character {
 
     @Override
     public String show() {
-        return null;
+        String hp = getStat().getRoundedHp() + "/" + getStat().getHp_max();
+        return String.format("""
+                =========================
+                |        MONSTRE        |
+                | PV %18s |
+                | Attaque %13d |
+                | Défense %13f |
+                | Vitesse %13d |
+                | Récompense %5d gold |
+                =========================""",
+                hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed(), goldValue);
     }
 }
