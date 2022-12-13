@@ -15,16 +15,19 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
     public static final Comparator<Hero> BY_SPEED = Comparator.comparingDouble((Hero h) -> h.getStat().getSpeed());
 
     private void sortList(Comparator<Hero> comparator) {
-        if (size() <= 1) return;
-        int left=0, right=1, i=size();
-        while (i >= 1) {
-            while (right < i) {
-                if (comparator.compare(get(left), get(right)) > 0)
-                    Collections.swap(this, left, right);
-                ++left;
-                ++right;
+        // Bubble sort implementation
+        System.out.println(this);
+        if (size() < 2) return;
+        int end = size();
+        while (end >= 1) {
+            int i = 0;
+            System.out.println(end);
+            while (i+1 < end) {
+                if (comparator.compare(get(i), get(i+1)) > 0)
+                    Collections.swap(this, i, i+1);
+                ++i;
             }
-            --i;
+            --end;
         }
     }
 
@@ -45,7 +48,11 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
 
     @Override
     public String show() {
-        sortList(BY_NAME);
+        return sortedShow(BY_NAME);
+    }
+
+    public String sortedShow(Comparator<Hero> comp) {
+        sortList(comp);
         StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | LVL | HP | ATK | DEF | VIT\n");
         for (int i=0; i<size(); ++i)
             sb.append(i).append(" | ").append(get(i).minimalShow()).append('\n');
