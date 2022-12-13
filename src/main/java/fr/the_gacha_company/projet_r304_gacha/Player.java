@@ -30,7 +30,7 @@ public class Player {
             case 1 -> {
                 if (gold >= HERO_COST) {
                     gold -= HERO_COST;
-                    Hero h = Hero.get_random_hero();
+                    Hero h = Hero.getRandomHero();
                     System.out.println(h.show());
                     System.out.println("Pièces restantes: " + gold);
                     deck.add(h);

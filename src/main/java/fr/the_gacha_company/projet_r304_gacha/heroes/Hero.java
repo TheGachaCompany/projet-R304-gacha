@@ -33,15 +33,15 @@ public abstract class Hero extends Character {
 
     static {
         double temp = 0;
-        for (Hero h: heroes) temp += h.drop;
+        for (Hero h: heroes) temp += h.rarity.lootChance;
         total = temp;
     }
 
-    public static Hero get_random_hero() {
+    public static Hero getRandomHero() {
         double x = Global.rand.nextDouble(total);
         double y = 0;
         for (Hero h: heroes) {
-            y += h.drop;
+            y += h.rarity.lootChance;
             if (x<y) return h;
         }
         throw new RuntimeException("It's dangerous to go alone, take this.");
@@ -53,7 +53,6 @@ public abstract class Hero extends Character {
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
-    private final double drop;
 
     private int level = 1;
     private int xp = 0;
@@ -67,7 +66,6 @@ public abstract class Hero extends Character {
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
-        drop = 1 / (double) rarity.stars;
     }
 
     public String getName() {
