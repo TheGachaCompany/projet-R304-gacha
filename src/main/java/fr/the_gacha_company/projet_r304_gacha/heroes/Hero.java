@@ -117,7 +117,23 @@ public abstract class Hero extends Character {
 
     @Override
     public String show() {
-        return null;
+        String hp = getStat().getRoundedHp() + "/" + getStat().getHp_max();
+        return String.format("""
+                =========================
+                |%s|
+                | Race %16s |
+                | Classe %14s |
+                | Genre %15s |
+                | Rareté %14s |
+                | Lore %16s |
+                | Level %15d |
+                | PV %18s |
+                | Attaque %13d |
+                | Défense %13f |
+                | Vitesse %13d |
+                =========================""",
+                Main.center(name,23), race.getName(), role.getName(), gender.toString(), rarity.toString(), lore, level,
+                hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed());
     }
 
     @Override

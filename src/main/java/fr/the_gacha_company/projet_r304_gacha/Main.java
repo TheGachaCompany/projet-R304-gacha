@@ -13,11 +13,17 @@ public class Main {
         return in.nextInt();
     }
 
+    public static String center(String s, int size) {
+        String temp = " ".repeat((size-s.length())/2);
+        return temp + s + temp;
+    }
+
     public static void main(String[] args) {
-        Player p = new Player();
-        do System.out.println(Player.instructions);
-        while (p.play(get_input("\nInstruction : ")) != -1);
-        System.out.println("Jeu fermé.");
+        System.out.println(1/2);
+//        Player p = new Player();
+//        do System.out.println(Player.instructions);
+//        while (p.play(get_input("\nInstruction : ")) != -1);
+//        System.out.println("Jeu fermé.");
     }
 
 }
