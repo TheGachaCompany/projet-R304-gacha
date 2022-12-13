@@ -4,7 +4,7 @@ public class Monster extends Character {
 
     public static Monster createMonster() {
         return new Monster(new Stat(Global.rand.nextInt(15, 50), Global.rand.nextInt(3, 15),
-                Global.rand.nextFloat(0.1f, 0.4f), Global.rand.nextInt(15, 35)));
+                Math.round(Global.rand.nextDouble(0, 0.5)*100)/100.0, Global.rand.nextInt(15, 35)));
     }
 
     private final int goldValue;
@@ -31,11 +31,11 @@ public class Monster extends Character {
                 |        MONSTRE        |
                 | PV %18s |
                 | Attaque %13d |
-                | Défense %13f |
+                | Défense %12d%% |
                 | Vitesse %13d |
                 | Récompense %3d pièces |
                 =========================""",
-                hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed(), goldValue);
+                hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed(), goldValue);
     }
 
 }

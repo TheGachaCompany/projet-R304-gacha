@@ -109,7 +109,7 @@ public abstract class Hero extends Character {
     public String minimalShow() {
         return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
                 " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
-                getStat().getAttack() + " | " + getStat().getDefense() + " | " + getStat().getSpeed();
+                getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
 
     @Override
@@ -126,11 +126,11 @@ public abstract class Hero extends Character {
                 | Level %15d |
                 | PV %18s |
                 | Attaque %13d |
-                | Défense %13f |
+                | Défense %12d%% |
                 | Vitesse %13d |
                 =========================""",
                 Global.center(name,23), race.getName(), role.getName(), gender.name, rarity.name, lore, level,
-                hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed());
+                hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed());
     }
 
     @Override
