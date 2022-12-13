@@ -23,12 +23,11 @@ public class Player {
     }
 
     private final HeroesDeck deck = new HeroesDeck();
-
     private int gold = 500000; // TODO : DONT FORGET TO RESET TO 0
 
     public int play(int choice) {
         switch (choice) {
-            case 1:
+            case 1 -> {
                 if (gold >= HERO_COST) {
                     gold -= HERO_COST;
                     Hero h = Hero.get_random_hero();
@@ -37,11 +36,9 @@ public class Player {
                     deck.add(h);
                 } else
                     System.out.println("Tu n'as pas assez d'argent (" + gold + " pièces)");
-                break;
-            case 2:
-                System.out.println(deck.show());
-                break;
-            case 3:
+            }
+            case 2 -> System.out.println(deck.show());
+            case 3 -> {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show());
                 System.out.println(deck.show());
@@ -53,11 +50,11 @@ public class Player {
                     System.out.println(h.getName() + " a gagné ! (+" + g + " pièces)");
                 }
                 h.getStat().regen();
-                break;
-            case 4:
+            }
+            case 4 -> {
                 return -1;
-            default:
-                System.out.println("Commande incorrecte (1-4)");
+            }
+            default -> System.out.println("Commande incorrecte (1-4)");
         }
         return 0;
     }

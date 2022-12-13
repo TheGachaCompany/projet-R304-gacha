@@ -17,4 +17,5 @@ public class Global {
         int spaceSum = size - s.length();
         return " ".repeat(spaceSum / 2) + s + " ".repeat(spaceSum / 2 + Math.floorMod(spaceSum, 2));
     }
+
 }

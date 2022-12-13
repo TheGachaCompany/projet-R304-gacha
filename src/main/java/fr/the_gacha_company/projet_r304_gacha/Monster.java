@@ -37,4 +37,5 @@ public class Monster extends Character {
                 =========================""",
                 hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed(), goldValue);
     }
+
 }

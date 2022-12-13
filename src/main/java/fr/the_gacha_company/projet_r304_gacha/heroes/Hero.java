@@ -47,7 +47,6 @@ public abstract class Hero extends Character {
         throw new RuntimeException("It's dangerous to go alone, take this.");
     }
 
-
     private final String name;
     private final Race race;
     private final Role role;
@@ -58,7 +57,6 @@ public abstract class Hero extends Character {
 
     private int level = 1;
     private int xp = 0;
-
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(stat);
