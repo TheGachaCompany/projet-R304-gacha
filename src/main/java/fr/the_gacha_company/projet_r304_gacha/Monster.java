@@ -33,7 +33,7 @@ public class Monster extends Character {
                 | Attaque %13d |
                 | Défense %13f |
                 | Vitesse %13d |
-                | Récompense %5d gold |
+                | Récompense %3d pièces |
                 =========================""",
                 hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed(), goldValue);
     }
