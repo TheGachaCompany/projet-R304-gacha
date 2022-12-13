@@ -14,7 +14,7 @@ public class Player {
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
             monster.attack(hero);
         while (true) {
-            if (hero.getStat().isDead()) return 0;
+            if (hero.getStat().isDead()) return -1;
             hero.attack(monster);
             if (monster.getStat().isDead()) return monster.getGoldValue();
             monster.attack(hero);
@@ -39,8 +39,11 @@ public class Player {
                 System.out.println(deck.show());
                 Hero h = deck.get(Main.get_input("Choisissez un héros (numéro): "));
                 int g = fight(h, m);
-                gold += g;
-                System.out.println("Won " + g + " gold (" + gold + ")");
+                if (g == -1) System.out.println(h.getName() + " a perdu... (+0)");
+                else {
+                    gold += g;
+                    System.out.println(h.getName() + " a gagné ! (+" + g + ")");
+                }
                 h.getStat().regen();
                 break;
             case 4:
