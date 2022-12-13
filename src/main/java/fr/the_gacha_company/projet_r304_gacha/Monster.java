@@ -3,15 +3,15 @@ package fr.the_gacha_company.projet_r304_gacha;
 public class Monster extends Character {
 
     public static Monster createMonster() {
-        return new Monster(new Stat(Main.rand.nextInt(15, 50), Main.rand.nextInt(3, 15),
-                Main.rand.nextFloat(0.1f, 0.4f), Main.rand.nextInt(15, 35)));
+        return new Monster(new Stat(Global.rand.nextInt(15, 50), Global.rand.nextInt(3, 15),
+                Math.round(Global.rand.nextDouble(0, 0.5)*100)/100.0, Global.rand.nextInt(15, 35)));
     }
 
     private final int goldValue;
 
     private Monster(Stat stat) {
         super(stat);
-        goldValue = Math.round((stat.getHp_max() + stat.getAttack() + stat.getSpeed()/3.0f) * (1+stat.getDefense()));
+        goldValue = (int) Math.round((stat.getHpMax()+stat.getAttack()+stat.getSpeed()/3.0) * (1+stat.getDefense()));
     }
 
     public int getGoldValue() {
@@ -25,16 +25,17 @@ public class Monster extends Character {
 
     @Override
     public String show() {
-        String hp = getStat().getRoundedHp() + "/" + getStat().getHp_max();
+        String hp = getStat().getRoundedHp() + "/" + getStat().getHpMax();
         return String.format("""
                 =========================
                 |        MONSTRE        |
                 | PV %18s |
                 | Attaque %13d |
-                | Défense %13f |
+                | Défense %12d%% |
                 | Vitesse %13d |
-                | Récompense %5d gold |
+                | Récompense %3d pièces |
                 =========================""",
-                hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed(), goldValue);
+                hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed(), goldValue);
     }
+
 }

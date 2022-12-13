@@ -9,4 +9,5 @@ public class MagicalHero extends Hero {
     public MagicalHero(String name, MagicalRace race, MagicalRole role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(name, race, role, gender, rarity, lore, stat);
     }
+
 }
