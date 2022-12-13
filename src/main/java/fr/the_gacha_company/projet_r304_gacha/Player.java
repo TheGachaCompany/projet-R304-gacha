@@ -37,7 +37,7 @@ public class Player {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show());
                 System.out.println(deck.show());
-                Hero h = deck.get(Main.get_input("Choisissez un héros (numéro): "));
+                Hero h = deck.get(Global.get_input("Choisissez un héros (numéro): "));
                 int g = fight(h, m);
                 if (g == -1) System.out.println(h.getName() + " a perdu... (+0)");
                 else {

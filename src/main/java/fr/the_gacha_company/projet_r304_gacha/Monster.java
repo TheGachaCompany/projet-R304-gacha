@@ -3,8 +3,8 @@ package fr.the_gacha_company.projet_r304_gacha;
 public class Monster extends Character {
 
     public static Monster createMonster() {
-        return new Monster(new Stat(Main.rand.nextInt(15, 50), Main.rand.nextInt(3, 15),
-                Main.rand.nextFloat(0.1f, 0.4f), Main.rand.nextInt(15, 35)));
+        return new Monster(new Stat(Global.rand.nextInt(15, 50), Global.rand.nextInt(3, 15),
+                Global.rand.nextFloat(0.1f, 0.4f), Global.rand.nextInt(15, 35)));
     }
 
     private final int goldValue;

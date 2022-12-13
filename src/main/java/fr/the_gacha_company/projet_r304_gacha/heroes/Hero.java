@@ -1,7 +1,7 @@
 package fr.the_gacha_company.projet_r304_gacha.heroes;
 
 import fr.the_gacha_company.projet_r304_gacha.Character;
-import fr.the_gacha_company.projet_r304_gacha.Main;
+import fr.the_gacha_company.projet_r304_gacha.Global;
 import fr.the_gacha_company.projet_r304_gacha.Stat;
 import fr.the_gacha_company.projet_r304_gacha.heroes.races.MagicalRace;
 import fr.the_gacha_company.projet_r304_gacha.heroes.races.PhysicalRace;
@@ -38,7 +38,7 @@ public abstract class Hero extends Character {
     }
 
     public static Hero get_random_hero() {
-        double x = Main.rand.nextDouble(total);
+        double x = Global.rand.nextDouble(total);
         double y = 0;
         for (Hero h: heroes) {
             y += h.drop;
@@ -132,7 +132,7 @@ public abstract class Hero extends Character {
                 | Défense %13f |
                 | Vitesse %13d |
                 =========================""",
-                Main.center(name,23), race.getName(), role.getName(), gender.toString(), rarity.toString(), lore, level,
+                Global.center(name,23), race.getName(), role.getName(), gender.toString(), rarity.toString(), lore, level,
                 hp, getStat().getAttack(), getStat().getDefense(), getStat().getSpeed());
     }
 
