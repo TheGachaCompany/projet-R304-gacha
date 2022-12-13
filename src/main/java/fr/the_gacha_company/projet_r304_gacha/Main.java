@@ -19,11 +19,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(1/2);
-//        Player p = new Player();
-//        do System.out.println(Player.instructions);
-//        while (p.play(get_input("\nInstruction : ")) != -1);
-//        System.out.println("Jeu fermé.");
+        Player p = new Player();
+        do System.out.println(Player.instructions);
+        while (p.play(get_input("\nInstruction : ")) != -1);
+        System.out.println("Jeu fermé.");
     }
 
 }
