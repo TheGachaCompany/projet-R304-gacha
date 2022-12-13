@@ -14,8 +14,8 @@ public class Main {
     }
 
     public static String center(String s, int size) {
-        String temp = " ".repeat((size-s.length())/2);
-        return temp + s + temp;
+        int spaceSum = size - s.length();
+        return " ".repeat(spaceSum/2) + s + " ".repeat(spaceSum/2+Math.floorMod(spaceSum,2));
     }
 
     public static void main(String[] args) {
