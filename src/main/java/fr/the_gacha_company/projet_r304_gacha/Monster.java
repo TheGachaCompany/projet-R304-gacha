@@ -11,7 +11,7 @@ public class Monster extends Character {
 
     private Monster(Stat stat) {
         super(stat);
-        goldValue = Math.round((stat.getHp_max() + stat.getAttack() + stat.getSpeed()/3.0f) * (1+stat.getDefense()));
+        goldValue = (int) Math.round((stat.getHpMax()+stat.getAttack()+stat.getSpeed()/3.0) * (1+stat.getDefense()));
     }
 
     public int getGoldValue() {
@@ -25,7 +25,7 @@ public class Monster extends Character {
 
     @Override
     public String show() {
-        String hp = getStat().getRoundedHp() + "/" + getStat().getHp_max();
+        String hp = getStat().getRoundedHp() + "/" + getStat().getHpMax();
         return String.format("""
                 =========================
                 |        MONSTRE        |

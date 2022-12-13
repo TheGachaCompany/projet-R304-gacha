@@ -18,16 +18,16 @@ public abstract class Hero extends Character {
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
         add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.SWORDSMAN, Gender.MALE, Rarity.COMMON,
-                "le lore", new Stat(45, 4, 0.25f, 15)));
+                "le lore", new Stat(45, 4, 0.25, 15)));
         add(new PhysicalHero("Borld", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
-                "le lore v2 xD", new Stat(35, 6, 0.2f, 20)));
+                "le lore v2 xD", new Stat(35, 6, 0.2, 20)));
 
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
-                "todo", new Stat(15, 7, 0.24f, 15)));
+                "todo", new Stat(20, 7, 0.24, 15)));
 
         // UNCOMMON
         add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
-                "todo", new Stat(20, 12, 0.25f, 40)));
+                "todo", new Stat(20, 12, 0.25, 40)));
     }};
     private static final double total;
 
@@ -60,6 +60,7 @@ public abstract class Hero extends Character {
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(stat);
+        this.getStat().boost(race.getBoost());
         this.name = name;
         this.race = race;
         this.role = role;
@@ -109,13 +110,13 @@ public abstract class Hero extends Character {
     @Override
     public String minimalShow() {
         return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
-                " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHp_max() + " | " +
+                " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
                 getStat().getAttack() + " | " + getStat().getDefense() + " | " + getStat().getSpeed();
     }
 
     @Override
     public String show() {
-        String hp = getStat().getRoundedHp() + "/" + getStat().getHp_max();
+        String hp = getStat().getRoundedHp() + "/" + getStat().getHpMax();
         return String.format("""
                 =========================
                 |%s|
