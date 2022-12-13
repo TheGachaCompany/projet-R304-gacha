@@ -13,6 +13,11 @@ public class Main {
         return in.nextInt();
     }
 
+    public static String center(String s, int size) {
+        int spaceSum = size - s.length();
+        return " ".repeat(spaceSum/2) + s + " ".repeat(spaceSum/2+Math.floorMod(spaceSum,2));
+    }
+
     public static void main(String[] args) {
         Player p = new Player();
         do System.out.println(Player.instructions);

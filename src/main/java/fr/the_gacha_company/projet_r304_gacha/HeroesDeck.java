@@ -1,16 +1,32 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
-import fr.the_gacha_company.projet_r304_gacha.hero.Hero;
+import fr.the_gacha_company.projet_r304_gacha.heroes.Hero;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
-public class HeroesDeck extends HashSet<Hero> {
+public class HeroesDeck extends ArrayList<Hero> implements Showable {
 
     @Override
     public boolean add(Hero hero) {
-        if (!super.add(hero))
+        if (contains(hero))
             // if hero is already unlocked
-            hero.getStat().increment_level();
+            hero.levelUp();
+        else
+            super.add(hero);
         return true;
     }
+
+    @Override
+    public String minimalShow() {
+        return null;
+    }
+
+    @Override
+    public String show() {
+        StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | LVL | HP | ATK | DEF | VIT\n");
+        for (int i=0; i<size(); ++i)
+            sb.append(i).append(" | ").append(get(i).minimalShow()).append('\n');
+        return sb.toString();
+    }
+
 }

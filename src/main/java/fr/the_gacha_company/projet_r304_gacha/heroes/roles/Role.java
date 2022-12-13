@@ -1,6 +1,4 @@
-package fr.the_gacha_company.projet_r304_gacha.hero.roles;
-
-import fr.the_gacha_company.projet_r304_gacha.hero.Stat;
+package fr.the_gacha_company.projet_r304_gacha.heroes.roles;
 
 public abstract class Role {
 
