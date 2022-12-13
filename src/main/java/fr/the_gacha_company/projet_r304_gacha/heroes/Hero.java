@@ -26,7 +26,7 @@ public abstract class Hero extends Character {
                 "todo", new Stat(15, 7, 0.24f, 15)));
 
         // UNCOMMON
-        add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.COMMON,
+        add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
                 "todo", new Stat(20, 12, 0.25f, 40)));
     }};
     private static final double total;
@@ -108,6 +108,17 @@ public abstract class Hero extends Character {
         xp = 0;
     }
 
+    @Override
+    public String minimalShow() {
+        return name + " | " + race.getName() + " | " + role.getName() + " | " + gender + " | " + rarity + " | " +
+                level + " | " + Math.round(getStat().getHp()) + '/' + getStat().getHp_max() + " | " +
+                getStat().getAttack() + " | " + getStat().getDefense() + " | " + getStat().getSpeed();
+    }
+
+    @Override
+    public String show() {
+        return null;
+    }
 
     @Override
     public String toString() {

@@ -18,4 +18,13 @@ public class Monster extends Character {
         return goldValue;
     }
 
+    @Override
+    public String minimalShow() {
+        return null;
+    }
+
+    @Override
+    public String show() {
+        return null;
+    }
 }

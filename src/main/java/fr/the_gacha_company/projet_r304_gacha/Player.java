@@ -31,9 +31,10 @@ public class Player {
                 deck.add(Hero.get_random_hero());
                 break;
             case 2:
-                System.out.println(deck);
+                System.out.println(deck.show());
                 break;
             case 3:
+                System.out.println(deck.show());
                 Hero h = deck.get(Main.get_input("Choisissez un héros (numéro): "));
                 int g = fight(h, Monster.createMonster());
                 gold += g;
