@@ -7,20 +7,28 @@ import java.util.Scanner;
 public final class Global {
 
     public static final Scanner in = new Scanner(System.in);
+    public static final String SEPARATOR = "_".repeat(60);
     public static final Random rand = new Random();
 
-    public static int get_input(String s) {
+    public static int getInput(String s) {
         while (true) {
             System.out.print(s);
             try {
                 int i = in.nextInt();
-                System.out.println("_".repeat(60));
+                in.nextLine();
+                System.out.println(SEPARATOR);
                 return i;
             } catch (InputMismatchException e) {
                 in.nextLine();
                 System.out.println("Entrée invalide, réessayez");
             }
         }
+    }
+
+    public static void pressEnter() {
+        System.out.print("\nAppuyez sur <entrée> pour continuer");
+        in.nextLine();
+        System.out.println(SEPARATOR);
     }
 
     public static String center(String s, int size) {

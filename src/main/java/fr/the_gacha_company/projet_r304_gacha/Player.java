@@ -40,17 +40,19 @@ public final class Player {
                     coins -= HERO_COST;
                     Hero h = Hero.getRandomHero();
                     System.out.println(h.show());
-                    System.out.println("Pièces restantes: " + coins);
                     deck.add(h);
                 } else
                     System.out.println("Tu n'as pas assez d'argent (" + coins + " pièces)");
+                Global.pressEnter();
             }
-            case 2 -> System.out.println(deck.show());
+            case 2 -> {
+                System.out.println(deck.show());
+                Global.pressEnter();
+            }
             case 3 -> {
                 Monster m = Monster.createMonster();
-                System.out.println(m.show());
-                System.out.println(deck.show());
-                Hero h = deck.get(Global.get_input("Choisissez un héros (numéro): "));
+                System.out.println(m.show() + "\n\n" + deck.show() + '\n');
+                Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
                 int c = fight(h, m);
                 if (c == -1) System.out.println(h.getName() + " a perdu... (+0 pièce)");
                 else {
@@ -58,6 +60,7 @@ public final class Player {
                     System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
                 }
                 h.startRegenThread(notificationManager);
+                Global.pressEnter();
             }
             case 4 -> {
                 return -1;

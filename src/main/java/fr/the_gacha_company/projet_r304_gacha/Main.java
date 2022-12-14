@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         for (int i=0; i<100; ++i) Player.play(1);    // TODO : DONT FORGET TO DELETE
         do System.out.println(Player.getOutput());
-        while (Player.play(Global.get_input("\nInstruction : ")) != -1);
+        while (Player.play(Global.getInput("\nInstruction : ")) != -1);
         System.out.println("Jeu fermé.");
     }
 
