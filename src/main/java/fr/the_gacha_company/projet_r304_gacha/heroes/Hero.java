@@ -92,6 +92,14 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Miafiel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.RARE,
                 "Elle se bat et elle fait mal", new Stat(35, 30, 0.50, 50)));
             //ARCHER
+        add(new PhysicalHero("Craven", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.RARE,
+                "Archer de la forest de woodkney", new Stat(30, 20, 0.25, 45)));
+        add(new PhysicalHero("Marguerite", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
+                "Archer de la garde royal ", new Stat(35, 25, 0.30, 50)));
+        add(new PhysicalHero("Ilol", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
+                "chasseur de prime", new Stat(35, 21, 0.25, 55)));
+            //MAGE
+
 
     }};
     private static final double total;
