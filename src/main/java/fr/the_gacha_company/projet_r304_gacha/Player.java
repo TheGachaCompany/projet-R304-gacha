@@ -1,8 +1,9 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
 import fr.the_gacha_company.projet_r304_gacha.heroes.Hero;
+import fr.the_gacha_company.projet_r304_gacha.threads.notifications.NotificationManager;
 
-public class Player {
+public final class Player {
 
     public static final String INSTRUCTIONS = """
             1. Acheter un héros
@@ -10,6 +11,7 @@ public class Player {
             3. Combattre
             4. Quitter le jeu""";
     public static final int HERO_COST = 200;
+    public static final NotificationManager notificationManager = new NotificationManager();
 
     private static int fight(Hero hero, Monster monster) {
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
@@ -21,11 +23,14 @@ public class Player {
             monster.attack(hero);
         }
     }
+    private static final HeroesDeck deck = new HeroesDeck();
+    private static int coins = 500000; // TODO : DONT FORGET TO RESET TO 0
 
-    private final HeroesDeck deck = new HeroesDeck();
-    private int coins = 500000; // TODO : DONT FORGET TO RESET TO 0
+    public static String getOutput() {
+        return notificationManager.read() + '\n' + INSTRUCTIONS;
+    }
 
-    public int play(int choice) {
+    public static int play(int choice) {
         switch (choice) {
             case 1 -> {
                 if (coins >= HERO_COST) {
@@ -49,7 +54,7 @@ public class Player {
                     coins += c;
                     System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
                 }
-                h.getStat().regen();
+                h.startRegenThread(notificationManager);
             }
             case 4 -> {
                 return -1;
@@ -58,5 +63,4 @@ public class Player {
         }
         return 0;
     }
-
 }

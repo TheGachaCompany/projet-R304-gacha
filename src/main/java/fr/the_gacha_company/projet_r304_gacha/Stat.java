@@ -13,7 +13,7 @@ public class Stat {
         this.attack = attack;
         this.defense = defense;
         this.speed = speed;
-        regen();
+        fullRegen();
     }
 
     public int getHpMax() {
@@ -36,8 +36,12 @@ public class Stat {
     public void takeDamage(double damage) {
         hp -= damage;
     }
+
+    public void regen1Hp() {
+        hp = Math.min(hpMax, hp+1);
+    }
     
-    public void regen() {
+    public void fullRegen() {
         hp = hpMax;
     }
 
@@ -51,6 +55,10 @@ public class Stat {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public boolean isFull() {
+        return hp >= hpMax;
     }
     
     public boolean isDead() {
