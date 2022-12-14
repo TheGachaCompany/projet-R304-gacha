@@ -128,7 +128,7 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Charles", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.LEGENDARY,
                 "Charles est le protecteur de Hauterre", new Stat(100, 55, 0.75, 65)));
             //ARCHER
-        add(new PhysicalHero("Charles", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.LEGENDARY,
+        add(new PhysicalHero("Nomin", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.LEGENDARY,
                 "Nomin est un aventurier trop stylé se battant avec un arc de lumière magique qui one shot les boss de fin avec une imitation naze de ENZO dans Overwatch", new Stat(120, 80, 0.30, 80)));
             //MAGE
         add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.LEGENDARY ,
