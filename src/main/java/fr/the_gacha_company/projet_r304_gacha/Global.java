@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Global {
+public final class Global {
 
     public static final Scanner in = new Scanner(System.in);
     public static final Random rand = new Random();
