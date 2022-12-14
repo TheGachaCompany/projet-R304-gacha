@@ -159,7 +159,6 @@ public abstract class Hero extends Character {
 
     private final String name;
     private final Race race;
-    private final Role role;
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
@@ -168,11 +167,10 @@ public abstract class Hero extends Character {
     private int xp = 0;
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
-        super(stat);
+        super(role, stat);
         this.getStat().boost(race.getBoost());
         this.name = name;
         this.race = race;
-        this.role = role;
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
@@ -184,10 +182,6 @@ public abstract class Hero extends Character {
 
     public Race getRace() {
         return race;
-    }
-
-    public Role getRole() {
-        return role;
     }
 
     public Gender getGender() {
@@ -221,7 +215,7 @@ public abstract class Hero extends Character {
 
     @Override
     public String minimalShow() {
-        return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
+        return name + " | " + race.getName() + " | " + getRole().getName() + " | " + gender.name + " | " + rarity.name +
                 " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
                 getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
@@ -243,7 +237,7 @@ public abstract class Hero extends Character {
                 | Défense %12d%% |
                 | Vitesse %13d |
                 =========================""",
-                Global.center(name,23), race.getName(), role.getName(), gender.name, rarity.name, lore, level,
+                Global.center(name,23), race.getName(), getRole().getName(), gender.name, rarity.name, lore, level,
                 hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed());
     }
 
