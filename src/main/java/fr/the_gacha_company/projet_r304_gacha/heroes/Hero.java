@@ -55,8 +55,18 @@ public abstract class Hero extends Character {
                 "Un habitué des bars qui possède aucune défaite dans toute les mélée général ", new Stat(20, 7, 0.25, 22)));
 
         // UNCOMMON
-        add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
-                "todo", new Stat(20, 12, 0.25, 40)));
+            // WARRIOR
+
+            // ARCHER
+        add(new PhysicalHero("Thal", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
+                "Beaux gosse du village elf", new Stat(20, 12, 0.25, 40)));
+        add(new PhysicalHero("Peutypié", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
+                "C est un ranger de la forest de woodkney", new Stat(20, 13, 0.20, 50)));
+        add(new PhysicalHero("Zodia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
+                "Archer des armées du chef de la tribu des ORC", new Stat(25, 14, 0.20, 35)));
+        add(new PhysicalHero("Brigitte", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
+                "Archer de l’armée royal ", new Stat(20, 12, 0.27, 45)));
+            //MAGE
     }};
     private static final double total;
 
