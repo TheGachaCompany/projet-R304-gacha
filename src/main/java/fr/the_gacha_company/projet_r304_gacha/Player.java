@@ -39,8 +39,8 @@ public final class Player {
                 if (coins >= HERO_COST) {
                     coins -= HERO_COST;
                     Hero h = Hero.getRandomHero();
-                    System.out.println(h.show());
                     deck.add(h);
+                    System.out.println(h.show());
                 } else
                     System.out.println("Tu n'as pas assez d'argent (" + coins + " pièces)");
                 Global.pressEnter();
