@@ -49,7 +49,7 @@ public class Player {
                     coins += c;
                     System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
                 }
-                h.getStat().regen();
+                h.startRegenThread();
             }
             case 4 -> {
                 return -1;

@@ -57,6 +57,17 @@ public abstract class Hero extends Character {
     private int level = 1;
     private int xp = 0;
 
+    // threads
+    public final Runnable regenJob = () -> {
+        while (!getStat().isFull()) {
+            try {Thread.sleep(2000);}
+            catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            getStat().regen1Hp();
+        }
+    };
+
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(stat);
         this.getStat().boost(race.getBoost());
@@ -105,6 +116,10 @@ public abstract class Hero extends Character {
         xp = 0;
     }
 
+    public void startRegenThread() {
+        new Thread(regenJob).start();
+    }
+
     @Override
     public String minimalShow() {
         return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
@@ -142,5 +157,4 @@ public abstract class Hero extends Character {
                 ", lore='" + lore + '\'' +
                 '}';
     }
-
 }
