@@ -20,17 +20,124 @@ public abstract class Hero extends Character {
 
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
-        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.SWORDSMAN, Gender.MALE, Rarity.COMMON,
-                "le lore", new Stat(45, 4, 0.25, 15)));
+            // WARROIR
+        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
+                "Godric, dit le puissant-chevalier, est un chevalier fanatique de l'Ordre", new Stat(45, 4, 0.25, 15)));
         add(new PhysicalHero("Borld", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
-                "le lore v2 xD", new Stat(35, 6, 0.2, 20)));
-
+                "Borld est le Hacheur dès légion de l'Ouest", new Stat(35, 6, 0.2, 20)));
+        add(new PhysicalHero("Fanir", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.FEMALE, Rarity.COMMON,
+                "Fanir est  une barbare", new Stat(50, 3, 0.45, 17)));
+        add(new PhysicalHero("Liseth", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.COMMON,
+                "Liseth est une guerrière", new Stat(30, 7, 0.15, 25)));
+        add(new PhysicalHero("Glarg", PhysicalRace.ORC, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.COMMON,
+                "Glarg est une paladin", new Stat(45, 4, 0.35, 20)));
+            // ARCHER
+        add(new PhysicalHero("Willam", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.COMMON,
+                "Willam est un archer du spectacle", new Stat(20, 6, 0.05, 25)));
+        add(new PhysicalHero("ZORG", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "paysan qui a trouver un arc au sol ", new Stat(25, 10, 0.15, 15)));
+        add(new PhysicalHero("Alimia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "elle est juste joli / pas d’autre caractère", new Stat(15, 9, 0.25, 25)));
+        add(new PhysicalHero("Ynir", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "ado d’une école d’archer", new Stat(22, 7, 0.045, 23)));
+        add(new PhysicalHero("O'lod", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "juste beau / il a pas d’autre caractère", new Stat(17, 8, 0.035, 24)));
+            // MAGE
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
-                "todo", new Stat(20, 7, 0.24, 15)));
+                "fille de bandit", new Stat(15, 7, 0.24, 15)));
+        add(new MagicalHero("Liahana", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
+                "une fillette qui maîtrise la magie", new Stat(16, 6, 0.23, 17)));
+        add(new MagicalHero("Grumborz", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.COMMON,
+                "fils de bandit", new Stat(17, 12, 0.22, 20)));
+        add(new MagicalHero("Josiane", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
+                "Vieille dame à qui il ne faut surtout pas voler le sac à main", new Stat(18, 8, 0.25, 15)));
+        add(new MagicalHero("Robert", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.COMMON,
+                "Un habitué des bars qui possède aucune défaite dans toute les mélée général ", new Stat(20, 7, 0.25, 22)));
 
         // UNCOMMON
-        add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
-                "todo", new Stat(20, 12, 0.25, 40)));
+            // WARRIOR
+        add(new PhysicalHero("Lyra", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
+                "Lyra est une paladine", new Stat(40, 7, 0.55, 25)));
+        add(new PhysicalHero("Abel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
+                "Abel est un guerrier de l’armée royal", new Stat(45, 8, 0.50, 30)));
+        add(new PhysicalHero("Burlo", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
+                "Burlo est un guerrier du roi qui a été recruté également en tant que bouffon ", new Stat(50, 7, 0.45, 45)));
+        add(new PhysicalHero("Kimberly", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
+                "Kimberly se bat avec son style de combats particulier elle alterne les attaque à distance ( ses crie strident ) et les attaque de corp a corp ( ses ongles de 15 kilomètres ) ", new Stat(10, 20, 0.25, 30)));
+            // ARCHER
+        add(new PhysicalHero("Thal", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
+                "Beaux gosse du village elf", new Stat(20, 12, 0.25, 40)));
+        add(new PhysicalHero("Peutypié", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
+                "C est un ranger de la forest de woodkney", new Stat(20, 13, 0.20, 50)));
+        add(new PhysicalHero("Zodia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
+                "Archer des armées du chef de la tribu des ORC", new Stat(25, 14, 0.20, 35)));
+        add(new PhysicalHero("Brigitte", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
+                "Archer de l’armée royal ", new Stat(20, 12, 0.27, 45)));
+            //MAGE
+        add(new MagicalHero("Elalar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.UNCOMMON,
+                "apprentie magicien", new Stat(20, 15, 0.24, 40)));
+        add(new MagicalHero("Bilee", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.UNCOMMON,
+                "apprentie magiciene", new Stat(21, 17, 0.23, 45)));
+        add(new MagicalHero("Ilbaga", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.UNCOMMON,
+                "Bandit maîtrisant la magie ", new Stat(22, 12, 0.22, 30)));
+        add(new MagicalHero("Samantha", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.UNCOMMON,
+                "couturière utilisant la magie pour coudre ou se défendre ", new Stat(23, 13, 0.25, 35)));
+
+        //RARE
+            //WARRIOR
+        add(new PhysicalHero("Vander", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.RARE,
+                "Humain qui tire sa puissance de sa transformation la nuit en loup garou ", new Stat(50, 20, 0.40, 40)));
+        add(new PhysicalHero("Mukor", PhysicalRace.ORC, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.RARE,
+                "Mukor  tolère la bagarre … aime la bagarre …Adore la bagarre …ne vie que pour la bagarre", new Stat(45, 25, 0.30, 45)));
+        add(new PhysicalHero("Miafiel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.RARE,
+                "Elle se bat et elle fait mal", new Stat(35, 30, 0.50, 50)));
+            //ARCHER
+        add(new PhysicalHero("Craven", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.RARE,
+                "Archer de la forest de woodkney", new Stat(30, 20, 0.25, 45)));
+        add(new PhysicalHero("Marguerite", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
+                "Archer de la garde royal ", new Stat(35, 25, 0.30, 50)));
+        add(new PhysicalHero("Ilol", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
+                "chasseur de prime", new Stat(35, 21, 0.25, 55)));
+            //MAGE
+        add(new MagicalHero("Sylgolor", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
+                "Prêtre de la forest de WoodKney", new Stat(30, 30, 0.30, 25)));
+        add(new MagicalHero("Inaxina", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.RARE,
+                "Voyante de la forest de WoodKney", new Stat(35, 35, 0.25, 30)));
+        add(new MagicalHero("Mash", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
+                "Il pratique la magie des quadriceps ", new Stat(33, 40, 0.35, 50)));
+
+        //EPIC
+            //WARRIOR
+        add(new PhysicalHero("Marius", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.EPIC,
+                "Chef des armées du roi", new Stat(70, 50, 0.60, 60)));
+        add(new PhysicalHero("Liarona", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.EPIC,
+                "Héroïne de la forest de WoodKney", new Stat(65, 55, 0.50, 65)));
+            //ARCHER
+        add(new PhysicalHero("Glundur", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
+                "Fanboy du grand Nomin", new Stat(55, 60, 0.30, 75)));
+        add(new PhysicalHero("Ivern", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
+                "Humain maudit transformer en arbre qui se bats avec un arc qui tir des brindilles , c'est également le meilleur amie de Margerite", new Stat(90, 15, 0.80, 80)));
+            //MAGE
+        add(new MagicalHero("Orga", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.EPIC,
+                "Fille du chef des ELF", new Stat(55, 60, 0.30, 75)));
+        add(new MagicalHero("Merlin", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.EPIC ,
+                "Il a une barbe blanche soyeuse", new Stat(50, 60, 0.45, 25)));
+
+        //LEGENDARY
+            //WARRIOR
+        add(new PhysicalHero("Charles", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.LEGENDARY,
+                "Charles est le protecteur de Hauterre", new Stat(100, 55, 0.75, 65)));
+            //ARCHER
+        add(new PhysicalHero("Charles", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.LEGENDARY,
+                "Nomin est un aventurier trop stylé se battant avec un arc de lumière magique qui one shot les boss de fin avec une imitation naze de ENZO dans Overwatch", new Stat(120, 80, 0.30, 80)));
+            //MAGE
+        add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.LEGENDARY ,
+                "Karen une une mage qui tire sa puissance de ses surpuissant crie strident capable de faire trembler des montagnes", new Stat(80, 70, 0.45, 60)));
+
+
+
+
+
     }};
     private static final double total;
 
