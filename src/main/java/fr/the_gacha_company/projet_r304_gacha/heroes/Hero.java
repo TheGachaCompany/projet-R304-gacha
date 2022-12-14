@@ -82,6 +82,17 @@ public abstract class Hero extends Character {
                 "Bandit maîtrisant la magie ", new Stat(22, 12, 0.22, 30)));
         add(new MagicalHero("Samantha", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.UNCOMMON,
                 "couturière utilisant la magie pour coudre ou se défendre ", new Stat(23, 13, 0.25, 35)));
+
+        //RARE
+            //WARRIOR
+        add(new PhysicalHero("Vander", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.RARE,
+                "Humain qui tire sa puissance de sa transformation la nuit en loup garou ", new Stat(50, 20, 0.40, 40)));
+        add(new PhysicalHero("Mukor", PhysicalRace.ORC, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.RARE,
+                "Mukor  tolère la bagarre … aime la bagarre …Adore la bagarre …ne vie que pour la bagarre", new Stat(45, 25, 0.30, 45)));
+        add(new PhysicalHero("Miafiel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.RARE,
+                "Elle se bat et elle fait mal", new Stat(35, 30, 0.50, 50)));
+            //ARCHER
+
     }};
     private static final double total;
 
