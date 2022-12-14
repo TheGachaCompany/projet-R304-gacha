@@ -20,7 +20,7 @@ public abstract class Hero extends Character {
 
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
-        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.SWORDSMAN, Gender.MALE, Rarity.COMMON,
+        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.COMMON,
                 "le lore", new Stat(45, 4, 0.25, 15)));
         add(new PhysicalHero("Borld", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
                 "le lore v2 xD", new Stat(35, 6, 0.2, 20)));
