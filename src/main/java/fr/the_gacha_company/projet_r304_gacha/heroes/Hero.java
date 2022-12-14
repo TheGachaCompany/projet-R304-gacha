@@ -32,9 +32,17 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Glarg", PhysicalRace.ORC, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.COMMON,
                 "Glarg est une paladin", new Stat(45, 4, 0.35, 20)));
             // ARCHER
-
+        add(new PhysicalHero("Willam", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.COMMON,
+                "Willam est un archer du spectacle", new Stat(20, 6, 0.05, 25)));
+        add(new PhysicalHero("ZORG", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "paysan qui a trouver un arc au sol ", new Stat(25, 10, 0.15, 15)));
+        add(new PhysicalHero("Alimia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "elle est juste joli / pas d’autre caractère", new Stat(15, 9, 0.25, 25)));
+        add(new PhysicalHero("Ynir", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "ado d’une école d’archer", new Stat(22, 7, 0.045, 23)));
+        add(new PhysicalHero("O'lod", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "juste beau / il a pas d’autre caractère", new Stat(17, 8, 0.035, 24)));
             // MAGE
-
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
                 "todo", new Stat(20, 7, 0.24, 15)));
 
