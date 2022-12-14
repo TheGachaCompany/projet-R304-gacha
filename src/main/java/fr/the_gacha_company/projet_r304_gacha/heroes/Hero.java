@@ -118,6 +118,12 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Ivern", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
                 "Humain maudit transformer en arbre qui se bats avec un arc qui tir des brindilles , c'est également le meilleur amie de Margerite", new Stat(90, 15, 0.80, 80)));
             //MAGE
+        add(new MagicalHero("Orga", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.EPIC,
+                "Fille du chef des ELF", new Stat(55, 60, 0.30, 75)));
+        add(new MagicalHero("Merlin", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.EPIC ,
+                "Il a une barbe blanche soyeuse", new Stat(50, 60, 0.45, 25)));
+
+        //LEGENDAIRE
 
 
 
