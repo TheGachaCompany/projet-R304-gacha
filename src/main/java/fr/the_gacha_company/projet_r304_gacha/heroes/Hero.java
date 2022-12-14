@@ -44,7 +44,15 @@ public abstract class Hero extends Character {
                 "juste beau / il a pas d’autre caractère", new Stat(17, 8, 0.035, 24)));
             // MAGE
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
-                "todo", new Stat(20, 7, 0.24, 15)));
+                "fille de bandit", new Stat(15, 7, 0.24, 15)));
+        add(new MagicalHero("Liahana", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
+                "une fillette qui maîtrise la magie", new Stat(16, 6, 0.23, 17)));
+        add(new MagicalHero("Grumborz", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.COMMON,
+                "fils de bandit", new Stat(17, 12, 0.22, 20)));
+        add(new MagicalHero("Josiane", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
+                "Vieille dame à qui il ne faut surtout pas voler le sac à main", new Stat(18, 8, 0.25, 15)));
+        add(new MagicalHero("Robert", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.COMMON,
+                "Un habitué des bars qui possède aucune défaite dans toute les mélée général ", new Stat(20, 7, 0.25, 22)));
 
         // UNCOMMON
         add(new PhysicalHero("Thal", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
