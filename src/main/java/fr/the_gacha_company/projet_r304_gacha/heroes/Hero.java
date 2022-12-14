@@ -56,7 +56,14 @@ public abstract class Hero extends Character {
 
         // UNCOMMON
             // WARRIOR
-
+        add(new PhysicalHero("Lyra", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
+                "Lyra est une paladine", new Stat(40, 7, 0.55, 25)));
+        add(new PhysicalHero("Abel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
+                "Abel est un guerrier de l’armée royal", new Stat(45, 8, 0.50, 30)));
+        add(new PhysicalHero("Burlo", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
+                "Burlo est un guerrier du roi qui a été recruté également en tant que bouffon ", new Stat(50, 7, 0.45, 45)));
+        add(new PhysicalHero("Kimberly", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
+                "Kimberly se bat avec son style de combats particulier elle alterne les attaque à distance ( ses crie strident ) et les attaque de corp a corp ( ses ongles de 15 kilomètres ) ", new Stat(10, 20, 0.25, 30)));
             // ARCHER
         add(new PhysicalHero("Thal", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
                 "Beaux gosse du village elf", new Stat(20, 12, 0.25, 40)));
