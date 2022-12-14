@@ -14,11 +14,14 @@ public final class Player {
     public static final NotificationManager notificationManager = new NotificationManager();
 
     private static int fight(Hero hero, Monster monster) {
+        // monster attacks first if he has more speed
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
             monster.attack(hero);
         while (true) {
+            // hero died ? No -> attack !
             if (hero.getStat().isDead()) return -1;
             hero.attack(monster);
+            // monster died ? No -> attack !
             if (monster.getStat().isDead()) return monster.getCoinsValue();
             monster.attack(hero);
         }
@@ -37,6 +40,7 @@ public final class Player {
         switch (choice) {
             case 1 -> {
                 if (coins >= HERO_COST) {
+                    // buy a hero
                     coins -= HERO_COST;
                     Hero h = Hero.getRandomHero();
                     System.out.println(h.show());
@@ -46,6 +50,7 @@ public final class Player {
                 Global.pressEnter();
             }
             case 2 -> {
+                // display player's heroes
                 System.out.println(deck.show());
                 Global.pressEnter();
             }
@@ -53,12 +58,14 @@ public final class Player {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show() + "\n\n" + deck.show() + '\n');
                 Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
+                // start fight
                 int c = fight(h, m);
                 if (c == -1) System.out.println(h.getName() + " a perdu... (+0 pièce)");
                 else {
                     coins += c;
                     System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
                 }
+                // start hero regeneration
                 h.startRegenThread(notificationManager);
                 Global.pressEnter();
             }

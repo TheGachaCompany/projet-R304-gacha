@@ -16,6 +16,7 @@ public class RegenJob implements Runnable {
     @Override
     public void run() {
         while (!hero.getStat().isFull()) {
+            // regen 1 hp each 2 seconds
             try {Thread.sleep(2000);}
             catch (InterruptedException e) {
                 throw new RuntimeException(e);

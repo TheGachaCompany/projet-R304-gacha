@@ -19,6 +19,7 @@ public final class Global {
                 System.out.println(SEPARATOR);
                 return i;
             } catch (InputMismatchException e) {
+                // empty buffer and retry
                 in.nextLine();
                 System.out.println("Entrée invalide, réessayez");
             }
