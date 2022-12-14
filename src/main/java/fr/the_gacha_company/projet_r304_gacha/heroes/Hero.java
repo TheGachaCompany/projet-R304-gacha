@@ -20,10 +20,20 @@ public abstract class Hero extends Character {
 
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
-        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.MALE, Rarity.COMMON,
-                "le lore", new Stat(45, 4, 0.25, 15)));
+            // WARROIR
+        add(new PhysicalHero("Godric", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
+                "Godric, dit le puissant-chevalier, est un chevalier fanatique de l'Ordre", new Stat(45, 4, 0.25, 15)));
         add(new PhysicalHero("Borld", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.COMMON,
-                "le lore v2 xD", new Stat(35, 6, 0.2, 20)));
+                "Borld est le Hacheur dès légion de l'Ouest", new Stat(35, 6, 0.2, 20)));
+        add(new PhysicalHero("Fanir", PhysicalRace.HUMAN, PhysicalRole.BARBARIAN, Gender.FEMALE, Rarity.COMMON,
+                "Fanir est  une barbare", new Stat(50, 3, 0.45, 17)));
+        add(new PhysicalHero("Liseth", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.COMMON,
+                "Liseth est une guerrière", new Stat(30, 7, 0.15, 25)));
+        add(new PhysicalHero("Glarg", PhysicalRace.ORC, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.COMMON,
+                "Glarg est une paladin", new Stat(45, 4, 0.35, 20)));
+            // ARCHER
+
+            // MAGE
 
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
                 "todo", new Stat(20, 7, 0.24, 15)));
