@@ -74,6 +74,14 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Brigitte", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
                 "Archer de l’armée royal ", new Stat(20, 12, 0.27, 45)));
             //MAGE
+        add(new MagicalHero("Elalar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.UNCOMMON,
+                "apprentie magicien", new Stat(20, 15, 0.24, 40)));
+        add(new MagicalHero("Bilee", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.UNCOMMON,
+                "apprentie magiciene", new Stat(21, 17, 0.23, 45)));
+        add(new MagicalHero("Ilbaga", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.UNCOMMON,
+                "Bandit maîtrisant la magie ", new Stat(22, 12, 0.22, 30)));
+        add(new MagicalHero("Samantha", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.UNCOMMON,
+                "couturière utilisant la magie pour coudre ou se défendre ", new Stat(23, 13, 0.25, 35)));
     }};
     private static final double total;
 
