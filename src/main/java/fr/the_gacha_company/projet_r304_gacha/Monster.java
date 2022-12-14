@@ -7,15 +7,15 @@ public class Monster extends Character {
                 Math.round(Global.rand.nextDouble(0, 0.5)*100)/100.0, Global.rand.nextInt(15, 35)));
     }
 
-    private final int goldValue;
+    private final int coinsValue;
 
     private Monster(Stat stat) {
         super(stat);
-        goldValue = (int) Math.round((stat.getHpMax()+stat.getAttack()+stat.getSpeed()/3.0) * (1+stat.getDefense()));
+        coinsValue = (int) Math.round((stat.getHpMax()+stat.getAttack()+stat.getSpeed()/3.0) * (1+stat.getDefense()));
     }
 
-    public int getGoldValue() {
-        return goldValue;
+    public int getCoinsValue() {
+        return coinsValue;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Monster extends Character {
                 | Vitesse %13d |
                 | Récompense %3d pièces |
                 =========================""",
-                hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed(), goldValue);
+                hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed(), coinsValue);
     }
 
 }
