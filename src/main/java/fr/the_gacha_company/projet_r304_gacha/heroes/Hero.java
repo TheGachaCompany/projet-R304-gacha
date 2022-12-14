@@ -9,6 +9,9 @@ import fr.the_gacha_company.projet_r304_gacha.heroes.races.Race;
 import fr.the_gacha_company.projet_r304_gacha.heroes.roles.MagicalRole;
 import fr.the_gacha_company.projet_r304_gacha.heroes.roles.PhysicalRole;
 import fr.the_gacha_company.projet_r304_gacha.heroes.roles.Role;
+import fr.the_gacha_company.projet_r304_gacha.threads.RegenJob;
+import fr.the_gacha_company.projet_r304_gacha.threads.notifications.HeroEndedRegenNotification;
+import fr.the_gacha_company.projet_r304_gacha.threads.notifications.NotificationManager;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -56,17 +59,6 @@ public abstract class Hero extends Character {
 
     private int level = 1;
     private int xp = 0;
-
-    // threads
-    public final Runnable regenJob = () -> {
-        while (!getStat().isFull()) {
-            try {Thread.sleep(2000);}
-            catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            getStat().regen1Hp();
-        }
-    };
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(stat);
@@ -116,8 +108,8 @@ public abstract class Hero extends Character {
         xp = 0;
     }
 
-    public void startRegenThread() {
-        new Thread(regenJob).start();
+    public void startRegenThread(NotificationManager notificationManager) {
+        new Thread(new RegenJob(this, new HeroEndedRegenNotification(notificationManager, this))).start();
     }
 
     @Override
