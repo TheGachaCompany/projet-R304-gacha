@@ -3,6 +3,9 @@ package fr.the_gacha_company.projet_r304_gacha;
 import fr.the_gacha_company.projet_r304_gacha.heroes.Hero;
 import fr.the_gacha_company.projet_r304_gacha.threads.notifications.NotificationManager;
 
+/**
+ * Holds the methods to interact in the game.
+ */
 public final class Player {
 
     public static final String INSTRUCTIONS = """
@@ -13,6 +16,12 @@ public final class Player {
     public static final int HERO_COST = 200;
     public static final NotificationManager notificationManager = new NotificationManager();
 
+    /**
+     * Realize a fight against a Hero and a Monster
+     * @param hero a Hero
+     * @param monster a Monster
+     * @return an int representing the coins gain if the hero wons the fight, else -1
+     */
     private static int fight(Hero hero, Monster monster) {
         // monster attacks first if he has more speed
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
@@ -29,13 +38,23 @@ public final class Player {
     private static final HeroesDeck deck = new HeroesDeck();
     private static int coins = 500000; // TODO : DONT FORGET TO RESET TO 0
 
-    public static String getOutput() {
+    /**
+     * Obtain the displayable main menu, with notifications (if any) and the instructions to show user's possibilities
+     * @return a String representing the displayable main menu
+     */
+    public static String showMainMenu() {
         StringBuilder sb = new StringBuilder();
         if (!notificationManager.isEmpty()) sb.append(notificationManager.read()).append("\n\n");
         sb.append(INSTRUCTIONS);
         return sb.toString();
     }
 
+    /**
+     * Execute user choice
+     * @param choice an int representing user choice based on INSTRUCTIONS
+     * @return an int: -1 if quitting else 0
+     * @see #INSTRUCTIONS
+     */
     public static int play(int choice) {
         switch (choice) {
             case 1 -> {
