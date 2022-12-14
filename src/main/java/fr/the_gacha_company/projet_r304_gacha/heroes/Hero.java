@@ -113,6 +113,11 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Liarona", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.EPIC,
                 "Héroïne de la forest de WoodKney", new Stat(65, 55, 0.50, 65)));
             //ARCHER
+        add(new PhysicalHero("Glundur", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
+                "Fanboy du grand Nomin", new Stat(55, 60, 0.30, 75)));
+        add(new PhysicalHero("Ivern", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
+                "Humain maudit transformer en arbre qui se bats avec un arc qui tir des brindilles , c'est également le meilleur amie de Margerite", new Stat(90, 15, 0.80, 80)));
+            //MAGE
 
 
 
