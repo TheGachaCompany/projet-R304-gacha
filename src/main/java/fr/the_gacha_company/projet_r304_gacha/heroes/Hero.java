@@ -108,6 +108,12 @@ public abstract class Hero extends Character {
 
         //EPIC
             //WARRIOR
+        add(new PhysicalHero("Marius", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.EPIC,
+                "Chef des armées du roi", new Stat(70, 50, 0.60, 60)));
+        add(new PhysicalHero("Liarona", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.EPIC,
+                "Héroïne de la forest de WoodKney", new Stat(65, 55, 0.50, 65)));
+            //ARCHER
+
 
 
     }};
