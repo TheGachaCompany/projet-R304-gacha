@@ -99,6 +99,15 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Ilol", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
                 "chasseur de prime", new Stat(35, 21, 0.25, 55)));
             //MAGE
+        add(new MagicalHero("Sylgolor", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
+                "Prêtre de la forest de WoodKney", new Stat(30, 30, 0.30, 25)));
+        add(new MagicalHero("Inaxina", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.RARE,
+                "Voyante de la forest de WoodKney", new Stat(35, 35, 0.25, 30)));
+        add(new MagicalHero("Mash", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
+                "Il pratique la magie des quadriceps ", new Stat(33, 40, 0.35, 50)));
+
+        //EPIC
+            //WARRIOR
 
 
     }};
