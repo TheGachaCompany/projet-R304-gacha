@@ -10,7 +10,27 @@ public abstract class Role {
     public static final Map<Role, Map<Role, Double>> efficency = new HashMap<>();
 
     static {
+        Map<Role, Double> map = createEfficencyEmptyMap();
+        map.put(PhysicalRole.ARCHER, 1d);
+        efficency.put(PhysicalRole.ARCHER, map);
 
+        map = createEfficencyEmptyMap();
+        map.put(PhysicalRole.BARBARIAN, 1.5);
+        efficency.put(PhysicalRole.ARCHER, map);
+
+        map = createEfficencyEmptyMap();
+        map.put(PhysicalRole.PALADIN, 0.7);
+        efficency.put(PhysicalRole.ARCHER, map);
+
+        map = createEfficencyEmptyMap();
+        map.put(PhysicalRole.WARRIOR, 1.2);
+        efficency.put(PhysicalRole.ARCHER, map);
+
+        /*
+        map = createEfficencyEmptyMap();
+        map.put(PhysicalRole.ARCHER, 1d);
+        efficency.put(PhysicalRole.ARCHER, map);
+        */
     }
 
     private static Map<Role, Double> createEfficencyEmptyMap() {
