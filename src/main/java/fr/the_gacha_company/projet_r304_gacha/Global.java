@@ -12,8 +12,11 @@ public final class Global {
     public static int get_input(String s) {
         while (true) {
             System.out.print(s);
-            try {return in.nextInt();}
-            catch (InputMismatchException e) {
+            try {
+                int i = in.nextInt();
+                System.out.println("_".repeat(60));
+                return i;
+            } catch (InputMismatchException e) {
                 in.nextLine();
                 System.out.println("Entrée invalide, réessayez");
             }

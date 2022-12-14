@@ -7,8 +7,7 @@ import java.util.ArrayList;
 public class NotificationManager extends ArrayList<Notification> implements Showable {
 
     public String read() {
-        if (isEmpty()) return "Pas de nouveauté";
-        String s = "Nouveauté(s) :" + minimalShow();
+        String s = "Nouveauté(s) :\n" + minimalShow();
         clear();
         return s;
     }
@@ -17,7 +16,8 @@ public class NotificationManager extends ArrayList<Notification> implements Show
     public String minimalShow() {
         StringBuilder sb = new StringBuilder();
         for (Notification n: this)
-            sb.append('\n').append(n.getMessage());
+            sb.append(n.getMessage()).append('\n');
+        sb.deleteCharAt(sb.length()-1);     // delete last '\n'
         return sb.toString();
     }
 

@@ -27,7 +27,10 @@ public final class Player {
     private static int coins = 500000; // TODO : DONT FORGET TO RESET TO 0
 
     public static String getOutput() {
-        return notificationManager.read() + '\n' + INSTRUCTIONS;
+        StringBuilder sb = new StringBuilder();
+        if (!notificationManager.isEmpty()) sb.append(notificationManager.read()).append("\n\n");
+        sb.append(INSTRUCTIONS);
+        return sb.toString();
     }
 
     public static int play(int choice) {
