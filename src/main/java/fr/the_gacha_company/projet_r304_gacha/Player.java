@@ -75,13 +75,49 @@ public final class Player {
             }
             case 2 -> {
                 // display player's heroes
+                int i = Global.getInput("""
+                        Trier par :
+                        1. Nom
+                        2. Rareté
+                        3. Niveau
+                        4. Points de vie
+                        5. Attaque
+                        6. Défense
+                        7. Vitesse
+                        
+                        Attribut (1-7) :\s""");
+                boolean reversed = Global.getInput("Tri décroissant ? (0-1) : ") == 1;
+                switch (i) {
+                    case 1 -> {
+                        deck.sortList(HeroesDeck.BY_NAME, reversed);
+                    }
+                    case 2 -> {
+                        deck.sortList(HeroesDeck.BY_RARITY, reversed);
+                    }
+                    case 3 -> {
+                        deck.sortList(HeroesDeck.BY_LEVEL, reversed);
+                    }
+                    case 4 -> {
+                        deck.sortList(HeroesDeck.BY_HP_MAX, reversed);
+                    }
+                    case 5 -> {
+                        deck.sortList(HeroesDeck.BY_ATTACK, reversed);
+                    }
+                    case 6 -> {
+                        deck.sortList(HeroesDeck.BY_DEFENSE, reversed);
+                    }
+                    case 7 -> {
+                        deck.sortList(HeroesDeck.BY_SPEED, reversed);
+                    }
+                    default -> throw new MyInputException();
+                }
                 System.out.println(deck.show());
                 Global.pressEnter();
             }
             case 3 -> {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show() + "\n\n" + deck.show() + '\n');
-                Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
+                Hero h = deck.get(Global.getInput("Choisissez un héros (N) : "));
                 fight(h, m);
                 h.startRegenThread(notificationManager);
                 Global.pressEnter();

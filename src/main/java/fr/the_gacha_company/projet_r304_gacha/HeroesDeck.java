@@ -19,7 +19,7 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
      * @param comparator a pre-defined Comparator to choose sorting attribute
      * @param reversed false to do ascending sort, true to do descending sort
      */
-    private void sortList(Comparator<Hero> comparator, boolean reversed) {
+    public void sortList(Comparator<Hero> comparator, boolean reversed) {
         // bubble sort implementation
         if (size() < 2) return;
         int end = size();
@@ -53,17 +53,6 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
 
     @Override
     public String show() {
-        return sortedShow(BY_RARITY, false);
-    }
-
-    /**
-     * Gets the render of the deck, sorted by comp and ordered with reversed
-     * @param comp sort Comparator
-     * @param reversed false to do ascending sort, true to do descending sort
-     * @return the render of the deck
-     */
-    public String sortedShow(Comparator<Hero> comp, boolean reversed) {
-        sortList(comp, reversed);
         StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | NIV | EXP | PV | ATQ | DEF | VIT");
         for (int i=0; i<size(); ++i) sb.append('\n').append(i).append(" | ").append(get(i).minimalShow());
         return sb.toString();
