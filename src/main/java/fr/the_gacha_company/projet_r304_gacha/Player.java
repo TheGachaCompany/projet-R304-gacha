@@ -13,13 +13,21 @@ public final class Player {
     public static final int HERO_COST = 200;
     public static final NotificationManager notificationManager = new NotificationManager();
 
-    private static int fight(Hero hero, Monster monster) {
+    private static void fight(Hero hero, Monster monster) {
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
             monster.attack(hero);
         while (true) {
-            if (hero.getStat().isDead()) return -1;
+            if (hero.getStat().isDead()) {
+                System.out.println(hero.getName() + " a perdu... (+0 pièce, +0 exp)");
+                return;
+            }
             hero.attack(monster);
-            if (monster.getStat().isDead()) return monster.getCoinsValue();
+            if (monster.getStat().isDead()) {
+                coins += monster.getCoinsValue();
+                hero.gainXp(monster.getXpValue());
+                System.out.println(hero.getName() + " a gagné ! (+" + monster.getCoinsValue() + " pièces, +" + monster.getXpValue() + " exp)");
+                return;
+            }
             monster.attack(hero);
         }
     }
@@ -39,8 +47,8 @@ public final class Player {
                 if (coins >= HERO_COST) {
                     coins -= HERO_COST;
                     Hero h = Hero.getRandomHero();
-                    System.out.println(h.show());
                     deck.add(h);
+                    System.out.println(h.show());
                 } else
                     System.out.println("Tu n'as pas assez d'argent (" + coins + " pièces)");
                 Global.pressEnter();
@@ -53,12 +61,7 @@ public final class Player {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show() + "\n\n" + deck.show() + '\n');
                 Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
-                int c = fight(h, m);
-                if (c == -1) System.out.println(h.getName() + " a perdu... (+0 pièce)");
-                else {
-                    coins += c;
-                    System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
-                }
+                fight(h, m);
                 h.startRegenThread(notificationManager);
                 Global.pressEnter();
             }

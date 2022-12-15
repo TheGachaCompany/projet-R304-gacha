@@ -18,6 +18,7 @@ import java.util.Set;
 
 public abstract class Hero extends Character {
 
+    public static final int MAX_XP = 100;
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
             // WARROIR
@@ -134,10 +135,6 @@ public abstract class Hero extends Character {
         add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.LEGENDARY ,
                 "Karen une une mage qui tire sa puissance de ses cries surpuissant et strident capable de faire trembler des montagnes", new Stat(80, 70, 0.45, 60)));
 
-
-
-
-
     }};
     private static final double total;
 
@@ -159,7 +156,6 @@ public abstract class Hero extends Character {
 
     private final String name;
     private final Race race;
-    private final Role role;
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
@@ -168,11 +164,10 @@ public abstract class Hero extends Character {
     private int xp = 0;
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
-        super(stat);
+        super(role, stat);
         this.getStat().boost(race.getBoost());
         this.name = name;
         this.race = race;
-        this.role = role;
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
@@ -184,10 +179,6 @@ public abstract class Hero extends Character {
 
     public Race getRace() {
         return race;
-    }
-
-    public Role getRole() {
-        return role;
     }
 
     public Gender getGender() {
@@ -212,7 +203,15 @@ public abstract class Hero extends Character {
 
     public void levelUp() {
         ++level;
-        xp = 0;
+        getStat().increment();
+    }
+
+    public void gainXp(int xp) {
+        this.xp += xp;
+        if (this.xp >= MAX_XP) {
+            levelUp();
+            this.xp = Math.floorMod(this.xp, MAX_XP);
+        }
     }
 
     public void startRegenThread(NotificationManager notificationManager) {
@@ -221,8 +220,8 @@ public abstract class Hero extends Character {
 
     @Override
     public String minimalShow() {
-        return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
-                " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
+        return name + " | " + race.getName() + " | " + getRole().getName() + " | " + gender.name + " | " + rarity.name +
+                " | " + level + " | " + xp + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
                 getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
 
@@ -243,7 +242,7 @@ public abstract class Hero extends Character {
                 | Défense %12d%% |
                 | Vitesse %13d |
                 =========================""",
-                Global.center(name,23), race.getName(), role.getName(), gender.name, rarity.name, lore, level,
+                Global.center(name,23), race.getName(), getRole().getName(), gender.name, rarity.name, lore, level,
                 hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed());
     }
 
