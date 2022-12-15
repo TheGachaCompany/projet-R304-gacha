@@ -14,7 +14,7 @@ public final class Global {
     public static final Random rand = new Random();
 
     /**
-     * Gets an int from user. Can never fail because it asks until a correct value is given.
+     * Gets an int from user.
      * @param s a String representing displayed instructions for user
      * @return an int representing the first correct user input
      */
@@ -44,7 +44,7 @@ public final class Global {
      * Centers a String in a size chars spaces
      * @param s a String to center
      * @param size an int representing the total requested size
-     * @return a String representing the // TODO
+     * @return a String representing the string given center in a string of the given size
      */
     public static String center(String s, int size) {
         int spaceSum = size - s.length();

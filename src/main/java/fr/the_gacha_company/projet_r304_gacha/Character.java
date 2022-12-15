@@ -11,7 +11,7 @@ public abstract class Character implements Showable {
     private Stat stat;
 
     /**
-     * Class constructor
+     * Constructor of Character
      * @param stat
      */
     public Character(Role role, Stat stat) {

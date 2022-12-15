@@ -1,7 +1,7 @@
 package fr.the_gacha_company.projet_r304_gacha;
 
 /**
- * Gives to classe two simple ways to render them in the terminal
+ * Gives to classes two simple ways to render them in the terminal
  */
 public interface Showable {
 

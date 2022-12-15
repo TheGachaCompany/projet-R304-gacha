@@ -17,7 +17,7 @@ public final class Player {
     public static final NotificationManager notificationManager = new NotificationManager();
 
     /**
-     * Realize a fight against a Hero and a Monster
+     * Realize a fight between a Hero and a Monster
      * @param hero a Hero
      * @param monster a Monster
      * @return an int representing the coins gain if the hero wons the fight, else -1

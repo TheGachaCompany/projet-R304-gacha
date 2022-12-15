@@ -46,11 +46,19 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
         return true;
     }
 
+    /**
+     * Create the string of minimalShow
+     * @return null
+     */
     @Override
     public String minimalShow() {
         return null;
     }
 
+    /**
+     * Create the string of Show
+     * @return a string to display in the terminal
+     */
     @Override
     public String show() {
         return sortedShow(BY_RARITY, false);
