@@ -4,7 +4,7 @@ import fr.the_gacha_company.projet_r304_gacha.heroes.Hero;
 import fr.the_gacha_company.projet_r304_gacha.threads.notifications.HeroEndedRegenNotification;
 
 /**
- * The class that implement Runnable and take care of the regen of heros
+ * The class that implement Runnable and take care of the regen of heroes
  */
 public class RegenJob implements Runnable {
 
@@ -22,7 +22,7 @@ public class RegenJob implements Runnable {
     }
 
     /**
-     * The methode that take care of increasing the hp of the hero until it reach max hp
+     * The method that take care of increasing the hp of the hero until it reach max hp
      */
     @Override
     public void run() {

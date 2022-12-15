@@ -4,25 +4,11 @@ package fr.the_gacha_company.projet_r304_gacha.heroes;
  * The enum that represent the rarity of a Hero
  */
 public enum Rarity {
-    /**
-     * The instance of the rarity COMMON
-     */
+
     COMMON("Commun", 1),
-    /**
-     * The instance of the rarity UNCOMMON
-     */
     UNCOMMON("Peu commun", 2),
-    /**
-     * The instance of the rarity RARE
-     */
     RARE("Rare", 3),
-    /**
-     * The instance of the rarity EPIC
-     */
     EPIC("Epic", 4),
-    /**
-     * The instance of the rarity LEGENDARY
-     */
     LEGENDARY("Légendaire", 5);
 
     public final String name;

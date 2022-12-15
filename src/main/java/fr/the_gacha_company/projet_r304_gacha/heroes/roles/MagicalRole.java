@@ -6,14 +6,12 @@ import java.util.List;
  * Class that extend Role and implement the roles that relate with magic
  */
 public class MagicalRole extends Role {
-    /**
-     * The static instance of the MagicalRole MAGICIAN
-     */
+
     public static final MagicalRole MAGICIAN = new MagicalRole(4, "Magicien", new double[]{2, 2, 2, 2, 0.5});
 
     /**
-     * Get the list of the magical role
-     * @return
+     * Get the list of all the magical roles
+     * @return roles list
      */
     public static List<Role> getRoles() {
         return List.of(MAGICIAN);

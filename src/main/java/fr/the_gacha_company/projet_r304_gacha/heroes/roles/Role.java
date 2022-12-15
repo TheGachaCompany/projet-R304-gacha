@@ -54,7 +54,7 @@ public abstract class Role {
 
     /**
      * Get the efficiency of the attack of this role
-     * @param id
+     * @param id role id there will be targeted
      * @return The efficiency
      */
     public double getEfficency(int id) {

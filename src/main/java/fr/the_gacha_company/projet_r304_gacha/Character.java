@@ -3,7 +3,7 @@ package fr.the_gacha_company.projet_r304_gacha;
 import fr.the_gacha_company.projet_r304_gacha.heroes.roles.Role;
 
 /**
- * Abstract representation of a Heroes and Monsters
+ * Abstract representation of Heroes and Monsters
  */
 public abstract class Character implements Showable {
 
