@@ -17,10 +17,10 @@ public final class Player {
     public static final NotificationManager notificationManager = new NotificationManager();
 
     /**
-     * Realize a fight between a Hero and a Monster
+     * Realize a fight between a Hero and a Monster.
+     * If hero wins, he gets xp and player wins coins
      * @param hero a Hero
      * @param monster a Monster
-     * @return an int representing the coins gain if the hero wons the fight, else -1
      */
     private static void fight(Hero hero, Monster monster) {
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
