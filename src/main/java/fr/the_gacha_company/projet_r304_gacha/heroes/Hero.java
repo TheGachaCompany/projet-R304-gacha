@@ -18,6 +18,7 @@ import java.util.Set;
 
 public abstract class Hero extends Character {
 
+    public static final int MAX_XP = 100;
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
             // WARROIR
@@ -134,10 +135,6 @@ public abstract class Hero extends Character {
         add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.LEGENDARY ,
                 "Karen une une mage qui tire sa puissance de ses surpuissant crie strident capable de faire trembler des montagnes", new Stat(80, 70, 0.45, 60)));
 
-
-
-
-
     }};
     private static final double total;
 
@@ -206,8 +203,15 @@ public abstract class Hero extends Character {
 
     public void levelUp() {
         ++level;
-        xp = 0;
         getStat().increment();
+    }
+
+    public void gainXp(int xp) {
+        this.xp += xp;
+        if (this.xp >= MAX_XP) {
+            levelUp();
+            this.xp = Math.floorMod(this.xp, MAX_XP);
+        }
     }
 
     public void startRegenThread(NotificationManager notificationManager) {
@@ -217,7 +221,7 @@ public abstract class Hero extends Character {
     @Override
     public String minimalShow() {
         return name + " | " + race.getName() + " | " + getRole().getName() + " | " + gender.name + " | " + rarity.name +
-                " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
+                " | " + level + " | " + xp + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
                 getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
 

@@ -10,15 +10,19 @@ public class Monster extends Character {
     }
 
     private final int coinsValue;
+    private final int xpValue;
 
     private Monster(Role role, Stat stat) {
         super(role, stat);
         coinsValue = (int) Math.round((stat.getHpMax()+stat.getAttack()+stat.getSpeed()/3.0) * (1+stat.getDefense()));
+        xpValue = coinsValue / 5;
     }
 
     public int getCoinsValue() {
         return coinsValue;
     }
+
+    public int getXpValue() {return xpValue;}
 
     @Override
     public String minimalShow() {
@@ -37,9 +41,10 @@ public class Monster extends Character {
                 | Défense %12d%% |
                 | Vitesse %13d |
                 | Récompense %3d pièces |
+                | Récompense %6d exp |
                 =========================""",
                 getRole().getName(), hp, getStat().getAttack(), (int) (getStat().getDefense()*100),
-                getStat().getSpeed(), coinsValue);
+                getStat().getSpeed(), coinsValue, xpValue);
     }
 
 }

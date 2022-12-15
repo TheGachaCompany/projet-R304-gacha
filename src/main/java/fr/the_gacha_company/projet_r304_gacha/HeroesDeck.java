@@ -48,7 +48,7 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
 
     public String sortedShow(Comparator<Hero> comp, boolean reversed) {
         sortList(comp, reversed);
-        StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | NIV | PV | ATQ | DEF | VIT");
+        StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | NIV | EXP | PV | ATQ | DEF | VIT");
         for (int i=0; i<size(); ++i) sb.append('\n').append(i).append(" | ").append(get(i).minimalShow());
 
         return sb.toString();
