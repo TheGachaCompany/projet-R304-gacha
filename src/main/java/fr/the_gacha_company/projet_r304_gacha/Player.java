@@ -41,7 +41,7 @@ public final class Player {
         }
     }
     private static final HeroesDeck deck = new HeroesDeck();
-    private static int coins = 500000; // TODO : DONT FORGET TO RESET TO 0
+    private static int coins = 600; // TODO : DONT FORGET TO RESET TO 0
 
     /**
      * Obtain the displayable main menu, with notifications (if any) and the instructions to show user's possibilities
