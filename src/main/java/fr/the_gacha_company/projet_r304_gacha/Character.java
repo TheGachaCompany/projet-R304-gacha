@@ -21,7 +21,7 @@ public abstract class Character implements Showable {
     }
 
     public void attack(Character target) {
-        target.stat.takeDamage(stat.getAttack() * (1-target.getStat().getDefense()) * Role.efficency.get(role).get(target.role));
+        target.stat.takeDamage(stat.getAttack() * (1-target.getStat().getDefense()) * role.getEfficency(target.role.getId()));
     }
 
 }
