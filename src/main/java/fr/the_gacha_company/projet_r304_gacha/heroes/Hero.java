@@ -16,9 +16,15 @@ import fr.the_gacha_company.projet_r304_gacha.threads.notifications.Notification
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The abstract class that represent the Hero and extends Character
+ */
 public abstract class Hero extends Character {
 
     public static final int MAX_XP = 100;
+    /**
+     * The static methode that create a set of Hero and add all of them to it
+     */
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
             // WARROIR
@@ -138,12 +144,16 @@ public abstract class Hero extends Character {
     }};
     private static final double total;
 
+
     static {
         double temp = 0;
         for (Hero h: heroes) temp += h.rarity.lootChance;
         total = temp;
     }
 
+    /**
+     * Get a random Hero in order to give a hero to the player
+     */
     public static Hero getRandomHero() {
         double x = Global.rand.nextDouble(total);
         double y = 0;
@@ -163,6 +173,16 @@ public abstract class Hero extends Character {
     private int level = 1;
     private int xp = 0;
 
+    /**
+     * The Constructor of Hero
+     * @param name The name of the hero
+     * @param race The race of the hero as a Race
+     * @param role The role of the hero as a Role
+     * @param gender The gender of the hero as a Gender
+     * @param rarity The rarity of the hero as a Rarity
+     * @param lore The lore of the hero
+     * @param stat the stat of the hero as a Stat
+     */
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
         super(role, stat);
         this.getStat().boost(race.getBoost());
@@ -173,39 +193,74 @@ public abstract class Hero extends Character {
         this.lore = lore;
     }
 
+    /**
+     * Get the name of the Hero
+     * @return the name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Get the Race of the Hero
+     * @return the race
+     */
     public Race getRace() {
         return race;
     }
 
+    /**
+     * Get the Gender of the Hero
+     * @return the gender
+     */
     public Gender getGender() {
         return gender;
     }
 
+    /**
+     * Get the Rarity of the Hero
+     * @return the rarity
+     */
     public Rarity getRarity() {
         return rarity;
     }
 
+    /**
+     * Get the lore of the hero
+     * @return the lore
+     */
     public String getLore() {
         return lore;
     }
 
+    /**
+     * Get the level of the hero
+     * @return the level
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Get the XP of the hero
+     * @return the XP
+     */
     public int getXp() {
         return xp;
     }
 
+    /**
+     * The methode that increase the level of the hero
+     */
     public void levelUp() {
         ++level;
         getStat().increment();
     }
 
+    /**
+     * The methode that increase the xp of the hero
+     * @param xp the xp that the methode will add to the XP of the hero
+     */
     public void gainXp(int xp) {
         this.xp += xp;
         if (this.xp >= MAX_XP) {
@@ -214,10 +269,18 @@ public abstract class Hero extends Character {
         }
     }
 
+    /**
+     * The methode that start the thread that manage the regen of the hero
+     * @param notificationManager the notificationManager
+     */
     public void startRegenThread(NotificationManager notificationManager) {
         new Thread(new RegenJob(this, new HeroEndedRegenNotification(notificationManager, this))).start();
     }
 
+    /**
+     * The methode that create the minimal show that the player can see in the terminal
+     * @return the minimalShow string
+     */
     @Override
     public String minimalShow() {
         return name + " | " + race.getName() + " | " + getRole().getName() + " | " + gender.name + " | " + rarity.name +
@@ -225,6 +288,10 @@ public abstract class Hero extends Character {
                 getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
 
+    /**
+     * The methode that create the show that the player can see in the terminal
+     * @return the show string
+     */
     @Override
     public String show() {
         String hp = getStat().getRoundedHp() + "/" + getStat().getHpMax();
@@ -246,6 +313,10 @@ public abstract class Hero extends Character {
                 hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed());
     }
 
+    /**
+     * the toString
+     * @return a string
+     */
     @Override
     public String toString() {
         return "Hero{" +
