@@ -207,6 +207,7 @@ public abstract class Hero extends Character {
     public void levelUp() {
         ++level;
         xp = 0;
+        getStat().increment();
     }
 
     public void startRegenThread(NotificationManager notificationManager) {

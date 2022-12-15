@@ -66,12 +66,17 @@ public class Stat {
     }
 
     public void boost(Stat stat) {
-        System.out.println(this);
         changeHpMax(stat.getHpMax());
         attack += stat.getAttack();
         defense += stat.getDefense();
         speed += stat.getSpeed();
-        System.out.println(this);
+    }
+
+    public void increment() {
+        changeHpMax(1);
+        attack += 1;
+        defense += 0.01;
+        speed += 1;
     }
 
     @Override
