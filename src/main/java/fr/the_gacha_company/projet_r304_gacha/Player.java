@@ -41,7 +41,7 @@ public final class Player {
         return sb.toString();
     }
 
-    public static int play(int choice) {
+    public static int play(int choice) throws MyInputException {
         switch (choice) {
             case 1 -> {
                 if (coins >= HERO_COST) {
@@ -68,7 +68,7 @@ public final class Player {
             case 4 -> {
                 return -1;
             }
-            default -> System.out.println("Commande incorrecte (1-4)");
+            default -> throw new MyInputException();
         }
         return 0;
     }

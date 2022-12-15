@@ -10,18 +10,16 @@ public final class Global {
     public static final String SEPARATOR = "_".repeat(60);
     public static final Random rand = new Random();
 
-    public static int getInput(String s) {
-        while (true) {
-            System.out.print(s);
-            try {
-                int i = in.nextInt();
-                in.nextLine();
-                System.out.println(SEPARATOR);
-                return i;
-            } catch (InputMismatchException e) {
-                in.nextLine();
-                System.out.println("Entrée invalide, réessayez");
-            }
+    public static int getInput(String s) throws MyInputException {
+        System.out.print(s);
+        try {
+            int i = in.nextInt();
+            in.nextLine();
+            System.out.println(SEPARATOR);
+            return i;
+        } catch (InputMismatchException e) {
+            in.nextLine();
+            throw new MyInputException();
         }
     }
 
