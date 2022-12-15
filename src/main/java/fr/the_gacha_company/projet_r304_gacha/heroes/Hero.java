@@ -18,6 +18,7 @@ import java.util.Set;
 
 public abstract class Hero extends Character {
 
+    public static final int MAX_XP = 100;
     public static Set<Hero> heroes = new HashSet<>(){{
         // COMMON
             // WARROIR
@@ -30,18 +31,18 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Liseth", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.COMMON,
                 "Liseth est une guerrière", new Stat(30, 7, 0.15, 25)));
         add(new PhysicalHero("Glarg", PhysicalRace.ORC, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.COMMON,
-                "Glarg est une paladin", new Stat(45, 4, 0.35, 20)));
+                "Glarg est une paladine", new Stat(45, 4, 0.35, 20)));
             // ARCHER
         add(new PhysicalHero("Willam", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.COMMON,
                 "Willam est un archer du spectacle", new Stat(20, 6, 0.05, 25)));
-        add(new PhysicalHero("ZORG", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
-                "paysan qui a trouver un arc au sol ", new Stat(25, 10, 0.15, 15)));
+        add(new PhysicalHero("Zorg", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
+                "paysan qui a trouvé un arc au sol ", new Stat(25, 10, 0.15, 15)));
         add(new PhysicalHero("Alimia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
-                "elle est juste joli / pas d’autre caractère", new Stat(15, 9, 0.25, 25)));
+                "elle est juste joli / elle n'a pas d’autre trait de caractère", new Stat(15, 9, 0.25, 25)));
         add(new PhysicalHero("Ynir", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
                 "ado d’une école d’archer", new Stat(22, 7, 0.045, 23)));
         add(new PhysicalHero("O'lod", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.COMMON,
-                "juste beau / il a pas d’autre caractère", new Stat(17, 8, 0.035, 24)));
+                "juste beau / il n'a pas d’autre trait de caractère", new Stat(17, 8, 0.035, 24)));
             // MAGE
         add(new MagicalHero("Snanar", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
                 "fille de bandit", new Stat(15, 7, 0.24, 15)));
@@ -52,23 +53,23 @@ public abstract class Hero extends Character {
         add(new MagicalHero("Josiane", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.COMMON,
                 "Vieille dame à qui il ne faut surtout pas voler le sac à main", new Stat(18, 8, 0.25, 15)));
         add(new MagicalHero("Robert", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.COMMON,
-                "Un habitué des bars qui possède aucune défaite dans toute les mélée général ", new Stat(20, 7, 0.25, 22)));
+                "Un habitué des bars qui possède aucune défaite dans toute les mélées générales ", new Stat(20, 7, 0.25, 22)));
 
         // UNCOMMON
             // WARRIOR
         add(new PhysicalHero("Lyra", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
                 "Lyra est une paladine", new Stat(40, 7, 0.55, 25)));
         add(new PhysicalHero("Abel", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
-                "Abel est un guerrier de l’armée royal", new Stat(45, 8, 0.50, 30)));
+                "Abel est un guerrier de l’armée royale", new Stat(45, 8, 0.50, 30)));
         add(new PhysicalHero("Burlo", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.MALE, Rarity.UNCOMMON,
-                "Burlo est un guerrier du roi qui a été recruté également en tant que bouffon ", new Stat(50, 7, 0.45, 45)));
+                "Burlo est un guerrier du roi qui a été recruter également en tant que bouffon du roi ", new Stat(50, 7, 0.45, 45)));
         add(new PhysicalHero("Kimberly", PhysicalRace.HUMAN, PhysicalRole.PALADIN, Gender.FEMALE, Rarity.UNCOMMON,
-                "Kimberly se bat avec son style de combats particulier elle alterne les attaque à distance ( ses crie strident ) et les attaque de corp a corp ( ses ongles de 15 kilomètres ) ", new Stat(10, 20, 0.25, 30)));
+                "Kimberly se bat avec son style de combats particulié elle alterne les attaques à distance ( ses cries strident ) et les attaques de corp à corp ( ses ongles de 15 kilomètres ) ", new Stat(10, 20, 0.25, 30)));
             // ARCHER
         add(new PhysicalHero("Thal", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
-                "Beaux gosse du village elf", new Stat(20, 12, 0.25, 40)));
+                "Beau gosse du village ", new Stat(20, 12, 0.25, 40)));
         add(new PhysicalHero("Peutypié", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.UNCOMMON,
-                "C est un ranger de la forest de woodkney", new Stat(20, 13, 0.20, 50)));
+                "C'est un ranger de la forêt de woodkney", new Stat(20, 13, 0.20, 50)));
         add(new PhysicalHero("Zodia", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
                 "Archer des armées du chef de la tribu des ORC", new Stat(25, 14, 0.20, 35)));
         add(new PhysicalHero("Brigitte", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.UNCOMMON,
@@ -93,16 +94,16 @@ public abstract class Hero extends Character {
                 "Elle se bat et elle fait mal", new Stat(35, 30, 0.50, 50)));
             //ARCHER
         add(new PhysicalHero("Craven", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.RARE,
-                "Archer de la forest de woodkney", new Stat(30, 20, 0.25, 45)));
+                "Archer de la forêt de woodkney", new Stat(30, 20, 0.25, 45)));
         add(new PhysicalHero("Marguerite", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
-                "Archer de la garde royal ", new Stat(35, 25, 0.30, 50)));
+                "Archer de la garde royale ", new Stat(35, 25, 0.30, 50)));
         add(new PhysicalHero("Ilol", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.FEMALE, Rarity.RARE,
                 "chasseur de prime", new Stat(35, 21, 0.25, 55)));
             //MAGE
         add(new MagicalHero("Sylgolor", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
-                "Prêtre de la forest de WoodKney", new Stat(30, 30, 0.30, 25)));
+                "Prêtre de la forêt de WoodKney", new Stat(30, 30, 0.30, 25)));
         add(new MagicalHero("Inaxina", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.RARE,
-                "Voyante de la forest de WoodKney", new Stat(35, 35, 0.25, 30)));
+                "Voyante de la forêt de WoodKney", new Stat(35, 35, 0.25, 30)));
         add(new MagicalHero("Mash", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.RARE,
                 "Il pratique la magie des quadriceps ", new Stat(33, 40, 0.35, 50)));
 
@@ -111,12 +112,12 @@ public abstract class Hero extends Character {
         add(new PhysicalHero("Marius", PhysicalRace.HUMAN, PhysicalRole.WARRIOR, Gender.MALE, Rarity.EPIC,
                 "Chef des armées du roi", new Stat(70, 50, 0.60, 60)));
         add(new PhysicalHero("Liarona", PhysicalRace.ORC, PhysicalRole.WARRIOR, Gender.FEMALE, Rarity.EPIC,
-                "Héroïne de la forest de WoodKney", new Stat(65, 55, 0.50, 65)));
+                "Héroïne de la forêt de WoodKney", new Stat(65, 55, 0.50, 65)));
             //ARCHER
         add(new PhysicalHero("Glundur", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
                 "Fanboy du grand Nomin", new Stat(55, 60, 0.30, 75)));
         add(new PhysicalHero("Ivern", PhysicalRace.HUMAN, PhysicalRole.ARCHER, Gender.MALE, Rarity.EPIC,
-                "Humain maudit transformer en arbre qui se bats avec un arc qui tir des brindilles , c'est également le meilleur amie de Margerite", new Stat(90, 15, 0.80, 80)));
+                "Humain maudit transformé en arbre qui se bat avec un arc qui tir des brindilles, c'est également le meilleur ami de Marguerite", new Stat(90, 15, 0.80, 80)));
             //MAGE
         add(new MagicalHero("Orga", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.EPIC,
                 "Fille du chef des ELF", new Stat(55, 60, 0.30, 75)));
@@ -129,14 +130,10 @@ public abstract class Hero extends Character {
                 "Charles est le protecteur de Hauterre", new Stat(100, 55, 0.75, 65)));
             //ARCHER
         add(new PhysicalHero("Nomin", PhysicalRace.ORC, PhysicalRole.ARCHER, Gender.MALE, Rarity.LEGENDARY,
-                "Nomin est un aventurier trop stylé se battant avec un arc de lumière magique qui one shot les boss de fin avec une imitation naze de ENZO dans Overwatch", new Stat(120, 80, 0.30, 80)));
+                "Nomin est un aventurier trop stylé se battant avec un arc de lumière magique qui one shot les boss de fin avec une imitation naze de HANZO dans Overwatch", new Stat(120, 80, 0.30, 80)));
             //MAGE
-        add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.MALE, Rarity.LEGENDARY ,
-                "Karen une une mage qui tire sa puissance de ses surpuissant crie strident capable de faire trembler des montagnes", new Stat(80, 70, 0.45, 60)));
-
-
-
-
+        add(new MagicalHero("Karen", MagicalRace.ELF, MagicalRole.MAGICIAN, Gender.FEMALE, Rarity.LEGENDARY ,
+                "Karen une une mage qui tire sa puissance de ses cries surpuissant et strident capable de faire trembler des montagnes", new Stat(80, 70, 0.45, 60)));
 
     }};
     private static final double total;
@@ -159,7 +156,6 @@ public abstract class Hero extends Character {
 
     private final String name;
     private final Race race;
-    private final Role role;
     private final Gender gender;
     private final Rarity rarity;
     private final String lore;
@@ -168,11 +164,10 @@ public abstract class Hero extends Character {
     private int xp = 0;
 
     public Hero(String name, Race race, Role role, Gender gender, Rarity rarity, String lore, Stat stat) {
-        super(stat);
+        super(role, stat);
         this.getStat().boost(race.getBoost());
         this.name = name;
         this.race = race;
-        this.role = role;
         this.gender = gender;
         this.rarity = rarity;
         this.lore = lore;
@@ -184,10 +179,6 @@ public abstract class Hero extends Character {
 
     public Race getRace() {
         return race;
-    }
-
-    public Role getRole() {
-        return role;
     }
 
     public Gender getGender() {
@@ -212,7 +203,15 @@ public abstract class Hero extends Character {
 
     public void levelUp() {
         ++level;
-        xp = 0;
+        getStat().increment();
+    }
+
+    public void gainXp(int xp) {
+        this.xp += xp;
+        if (this.xp >= MAX_XP) {
+            levelUp();
+            this.xp = Math.floorMod(this.xp, MAX_XP);
+        }
     }
 
     public void startRegenThread(NotificationManager notificationManager) {
@@ -221,8 +220,8 @@ public abstract class Hero extends Character {
 
     @Override
     public String minimalShow() {
-        return name + " | " + race.getName() + " | " + role.getName() + " | " + gender.name + " | " + rarity.name +
-                " | " + level + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
+        return name + " | " + race.getName() + " | " + getRole().getName() + " | " + gender.name + " | " + rarity.name +
+                " | " + level + " | " + xp + " | " + getStat().getRoundedHp() + '/' + getStat().getHpMax() + " | " +
                 getStat().getAttack() + " | " + (int) (getStat().getDefense()*100) + "% | " + getStat().getSpeed();
     }
 
@@ -243,7 +242,7 @@ public abstract class Hero extends Character {
                 | Défense %12d%% |
                 | Vitesse %13d |
                 =========================""",
-                Global.center(name,23), race.getName(), role.getName(), gender.name, rarity.name, lore, level,
+                Global.center(name,23), race.getName(), getRole().getName(), gender.name, rarity.name, lore, level,
                 hp, getStat().getAttack(), (int) (getStat().getDefense()*100), getStat().getSpeed());
     }
 

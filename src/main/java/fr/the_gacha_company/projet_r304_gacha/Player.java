@@ -22,16 +22,21 @@ public final class Player {
      * @param monster a Monster
      * @return an int representing the coins gain if the hero wons the fight, else -1
      */
-    private static int fight(Hero hero, Monster monster) {
-        // monster attacks first if he has more speed
+    private static void fight(Hero hero, Monster monster) {
         if (monster.getStat().getSpeed()>hero.getStat().getSpeed())
             monster.attack(hero);
         while (true) {
-            // hero died ? No -> attack !
-            if (hero.getStat().isDead()) return -1;
+            if (hero.getStat().isDead()) {
+                System.out.println(hero.getName() + " a perdu... (+0 pièce, +0 exp)");
+                return;
+            }
             hero.attack(monster);
-            // monster died ? No -> attack !
-            if (monster.getStat().isDead()) return monster.getCoinsValue();
+            if (monster.getStat().isDead()) {
+                coins += monster.getCoinsValue();
+                hero.gainXp(monster.getXpValue());
+                System.out.println(hero.getName() + " a gagné ! (+" + monster.getCoinsValue() + " pièces, +" + monster.getXpValue() + " exp)");
+                return;
+            }
             monster.attack(hero);
         }
     }
@@ -48,22 +53,22 @@ public final class Player {
         sb.append(INSTRUCTIONS);
         return sb.toString();
     }
-
+ 
     /**
      * Execute user choice
      * @param choice an int representing user choice based on INSTRUCTIONS
      * @return an int: -1 if quitting else 0
      * @see #INSTRUCTIONS
      */
-    public static int play(int choice) {
+    public static int play(int choice) throws MyInputException {
         switch (choice) {
             case 1 -> {
                 if (coins >= HERO_COST) {
                     // buy a hero
                     coins -= HERO_COST;
                     Hero h = Hero.getRandomHero();
-                    System.out.println(h.show());
                     deck.add(h);
+                    System.out.println(h.show());
                 } else
                     System.out.println("Tu n'as pas assez d'argent (" + coins + " pièces)");
                 Global.pressEnter();
@@ -77,21 +82,14 @@ public final class Player {
                 Monster m = Monster.createMonster();
                 System.out.println(m.show() + "\n\n" + deck.show() + '\n');
                 Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
-                // start fight
-                int c = fight(h, m);
-                if (c == -1) System.out.println(h.getName() + " a perdu... (+0 pièce)");
-                else {
-                    coins += c;
-                    System.out.println(h.getName() + " a gagné ! (+" + c + " pièces)");
-                }
-                // start hero regeneration
+                fight(h, m);
                 h.startRegenThread(notificationManager);
                 Global.pressEnter();
             }
             case 4 -> {
                 return -1;
             }
-            default -> System.out.println("Commande incorrecte (1-4)");
+            default -> throw new MyInputException();
         }
         return 0;
     }

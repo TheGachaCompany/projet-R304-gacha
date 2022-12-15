@@ -18,19 +18,16 @@ public final class Global {
      * @param s a String representing displayed instructions for user
      * @return an int representing the first correct user input
      */
-    public static int getInput(String s) {
-        while (true) {
-            System.out.print(s);
-            try {
-                int i = in.nextInt();
-                in.nextLine();
-                System.out.println(SEPARATOR);
-                return i;
-            } catch (InputMismatchException e) {
-                // empty buffer and retry
-                in.nextLine();
-                System.out.println("Entrée invalide, réessayez");
-            }
+    public static int getInput(String s) throws MyInputException {
+        System.out.print(s);
+        try {
+            int i = in.nextInt();
+            in.nextLine();
+            System.out.println(SEPARATOR);
+            return i;
+        } catch (InputMismatchException e) {
+            in.nextLine();
+            throw new MyInputException();
         }
     }
 
