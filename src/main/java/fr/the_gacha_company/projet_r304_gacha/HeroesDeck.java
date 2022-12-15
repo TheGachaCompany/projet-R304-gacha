@@ -14,8 +14,13 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
     public static final Comparator<Hero> BY_DEFENSE = Comparator.comparingDouble((Hero h) -> h.getStat().getDefense());
     public static final Comparator<Hero> BY_SPEED = Comparator.comparingDouble((Hero h) -> h.getStat().getSpeed());
 
+    /**
+     * Sorts this object by the selected attribute
+     * @param comparator a pre-defined Comparator to choose sorting attribute
+     * @param reversed false to do ascending sort, true to do descending sort
+     */
     private void sortList(Comparator<Hero> comparator, boolean reversed) {
-        // Bubble sort implementation
+        // bubble sort implementation
         if (size() < 2) return;
         int end = size();
         while (end >= 1) {
@@ -29,6 +34,11 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
         }
     }
 
+    /**
+     * Unlocks a new Hero. Increments its level if already unlocked.
+     * @param hero the hero to add to the deck
+     * @return true
+     */
     @Override
     public boolean add(Hero hero) {
         if (contains(hero)) hero.levelUp();     // if hero is already unlocked
@@ -46,6 +56,12 @@ public class HeroesDeck extends ArrayList<Hero> implements Showable {
         return sortedShow(BY_RARITY, false);
     }
 
+    /**
+     * Gets the render of the deck, sorted by comp and ordered with reversed
+     * @param comp sort Comparator
+     * @param reversed false to do ascending sort, true to do descending sort
+     * @return the render of the deck
+     */
     public String sortedShow(Comparator<Hero> comp, boolean reversed) {
         sortList(comp, reversed);
         StringBuilder sb = new StringBuilder("N | NOM | RACE | CLASSE | GENRE | RARETE | NIV | EXP | PV | ATQ | DEF | VIT");
