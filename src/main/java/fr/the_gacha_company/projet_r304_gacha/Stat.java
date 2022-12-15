@@ -34,7 +34,7 @@ public class Stat {
     }
 
     public void takeDamage(double damage) {
-        hp -= damage;
+        hp = Math.max(hp-damage, 0);
     }
 
     public void regen1Hp() {

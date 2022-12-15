@@ -26,7 +26,6 @@ public final class Player {
                 coins += monster.getCoinsValue();
                 hero.gainXp(monster.getXpValue());
                 System.out.println(hero.getName() + " a gagné ! (+" + monster.getCoinsValue() + " pièces, +" + monster.getXpValue() + " exp)");
-                hero.startRegenThread(notificationManager);
                 return;
             }
             monster.attack(hero);
@@ -63,6 +62,7 @@ public final class Player {
                 System.out.println(m.show() + "\n\n" + deck.show() + '\n');
                 Hero h = deck.get(Global.getInput("Choisissez un héros (numéro): "));
                 fight(h, m);
+                h.startRegenThread(notificationManager);
                 Global.pressEnter();
             }
             case 4 -> {
