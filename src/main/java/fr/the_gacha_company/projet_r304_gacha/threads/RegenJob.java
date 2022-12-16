@@ -34,7 +34,6 @@ public class RegenJob implements Runnable {
             }
             hero.getStat().regen1Hp();
         }
-        System.out.println("FINI");
         notification.trigger();
     }
 
